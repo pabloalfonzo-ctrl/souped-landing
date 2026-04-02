@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Souped — Describing it is shipping it.</title>
+
+  <meta name="description" content="Souped is the first Conversational Production platform. Describe an idea and have it live in production — no code, no pipelines, no engineers needed.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0D0D2B">
+  <link rel="canonical" href="https://souped.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://souped.app/">
+  <meta property="og:title" content="Souped — Describing it is shipping it.">
+  <meta property="og:description" content="The first platform where describing an idea and having it live in production are one and the same.">
+  <meta property="og:image" content="https://souped.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Souped — Describing it is shipping it.">
+  <meta name="twitter:description" content="The first platform where describing an idea and having it live in production are one and the same.">
+  <meta name="twitter:image" content="https://souped.app/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream:'#FFF8F0','cream-mid':'#F3EBE0','cream-dark':'#E5D9CA',
+            dark:'#0D0D2B','dark-mid':'#14142E','dark-card':'#1C1C38',
+            orange:'#FF4433','orange-dk':'#E03328','orange-lt':'#FF6B5E',
+            amber:'#FFBB33','amber-dk':'#E5A020',
+            violet:'#7B68EE','violet-dk':'#6350D8','violet-lt':'#9B8AF5',
+            ink:'#0D0D2B','ink-mid':'#2A2A4A','ink-muted':'#5A5A78',
+            sage:'#16A34A','mint':'#E8F5EC',
+          },
+          fontFamily: {
+            display:['"Bricolage Grotesque"','sans-serif'],
+            body:['"DM Sans"','sans-serif'],
+            mono:['"JetBrains Mono"','monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Souped","url":"https://souped.app"},{"@type":"SoftwareApplication","name":"Souped","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Conversational Production?","acceptedAnswer":{"@type":"Answer","text":"Describing what you want to build and having it live in production in a single action."}},{"@type":"Question","name":"Do I need to know how to code?","acceptedAnswer":{"@type":"Answer","text":"Nop. Just describe what you want."}},{"@type":"Question","name":"What is the Idea Tax?","acceptedAnswer":{"@type":"Answer","text":"The time, money, and permission between having an idea and shipping it."}},{"@type":"Question","name":"How fast can I ship?","acceptedAnswer":{"@type":"Answer","text":"Most users ship in under 90 minutes."}},{"@type":"Question","name":"Who owns the apps?","acceptedAnswer":{"@type":"Answer","text":"You do. Apps deploy to your own accounts."}}]}]}
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:auto}
+    body{font-family:'DM Sans',sans-serif;background:#0D0D2B;color:#FFF8F0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    .font-display{font-family:'Bricolage Grotesque',sans-serif}
+    .font-mono{font-family:'JetBrains Mono',monospace}
+
+    /* Grain */
+    body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.12;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+
+    /* Nav */
+    .nav-blur{backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%)}
+
+    /* Pill */
+    .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 16px;border-radius:9999px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid currentColor;white-space:nowrap}
+
+    /* Marquee */
+    .marquee-wrap{overflow:hidden}
+    .marquee-track{display:flex;width:max-content}
+    .mq-fwd{animation:mq-fwd 30s linear infinite}
+    .mq-rev{animation:mq-rev 30s linear infinite}
+    @keyframes mq-fwd{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes mq-rev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+    .marquee-wrap:hover .marquee-track{animation-play-state:paused}
+    .marquee-wrap:focus-within .marquee-track{animation-play-state:paused}
+
+    /* Screen reader only */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+
+    /* ═══ PREFERS-REDUCED-MOTION (H1, C3, M2) ═══ */
+    @media(prefers-reduced-motion:reduce){
+      .hero-anim{animation:none;opacity:1;transform:none}
+      .mesh-bg{animation:none}
+      .mesh-orb{animation:none}
+      [style*="hero-float"]{animation:none!important}
+      .marquee-track{animation:none!important}
+      .reveal,.reveal-left,.reveal-right{opacity:1;transform:none;transition:none}
+      .faq-body{transition:none}
+      .faq-icon{transition:none}
+      .cursor{animation:none;opacity:1}
+      .live-dot{animation:none}
+      *{scroll-behavior:auto!important}
+    }
+
+    /* FAQ */
+    .faq-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.4,0,.2,1)}
+    .faq-body>div{overflow:hidden}
+    .faq-item[data-open="true"] .faq-body{grid-template-rows:1fr}
+    .faq-icon{transition:transform .35s cubic-bezier(.4,0,.2,1);line-height:1}
+    .faq-item[data-open="true"] .faq-icon{transform:rotate(45deg)}
+
+    :focus-visible{outline:2px solid #FF4433;outline-offset:3px;border-radius:6px}
+    ::-webkit-scrollbar{width:4px}
+    ::-webkit-scrollbar-track{background:#0D0D2B}
+    ::-webkit-scrollbar-thumb{background:#FF4433;border-radius:10px}
+
+    /* ═══ MESH GRADIENT HERO ═══ */
+    .mesh-hero{
+      position:relative;
+      min-height:100vh;
+      overflow:hidden;
+    }
+    .mesh-bg{
+      position:absolute;inset:0;z-index:0;
+      background:
+        radial-gradient(ellipse 70% 60% at 10% 80%, rgba(123,104,238,.4) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 70% at 50% 30%, rgba(255,187,51,.35) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 85% 20%, rgba(255,68,51,.4) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 60% at 90% 80%, rgba(255,68,51,.3) 0%, transparent 50%),
+        #0D0D2B;
+      animation:mesh-shift 14s ease-in-out infinite alternate;
+    }
+    @keyframes mesh-shift{
+      0%{background-position:0% 0%,50% 0%,100% 0%,100% 100%}
+      50%{background-position:10% 90%,40% 40%,80% 30%,90% 70%}
+      100%{background-position:5% 70%,60% 20%,85% 10%,95% 85%}
+    }
+    .mesh-orb{
+      position:absolute;border-radius:50%;filter:blur(100px);opacity:.22;
+      animation:orb-float 10s ease-in-out infinite alternate;
+    }
+    .mesh-orb-1{width:500px;height:500px;background:#FF4433;top:-10%;right:-5%;animation-delay:0s}
+    .mesh-orb-2{width:450px;height:450px;background:#7B68EE;bottom:-15%;left:-5%;animation-delay:-5s;opacity:.2}
+    .mesh-orb-3{width:350px;height:350px;background:#FFBB33;top:30%;left:30%;animation-delay:-3s;opacity:.12}
+
+    /* Hero CSS entrance — no JS dependency */
+    .hero-anim{
+      opacity:0;
+      transform:translateY(24px);
+      animation:heroIn .65s cubic-bezier(.4,0,.2,1) forwards;
+    }
+    @keyframes heroIn{
+      to{opacity:1;transform:translateY(0)}
+    }
+    @keyframes hero-float{
+      0%{transform:translateY(0)}
+      100%{transform:translateY(-12px)}
+    }
+    @keyframes orb-float{
+      0%{transform:translate(0,0) scale(1)}
+      100%{transform:translate(30px,-40px) scale(1.1)}
+    }
+
+    /* ═══ SCROLL REVEAL (Exergy3 style) ═══ */
+    .reveal{
+      opacity:0;
+      transform:translate3d(0,40px,0) scale(.92);
+      transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);
+    }
+    .reveal.is-visible{
+      opacity:1;
+      transform:translate3d(0,0,0) scale(1);
+    }
+    .reveal-left{
+      opacity:0;
+      transform:translate3d(-60px,0,0) scale(.95);
+      transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);
+    }
+    .reveal-left.is-visible{opacity:1;transform:translate3d(0,0,0) scale(1)}
+    .reveal-right{
+      opacity:0;
+      transform:translate3d(60px,0,0) scale(.95);
+      transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1);
+    }
+    .reveal-right.is-visible{opacity:1;transform:translate3d(0,0,0) scale(1)}
+
+    /* Stagger delays */
+    .delay-1{transition-delay:.1s}
+    .delay-2{transition-delay:.2s}
+    .delay-3{transition-delay:.3s}
+    .delay-4{transition-delay:.4s}
+    .delay-5{transition-delay:.5s}
+    .delay-6{transition-delay:.6s}
+
+    /* ═══ ASSEMBLY ═══ */
+    .app-window{width:min(560px,90vw);background:#1C1C38;border-radius:16px;border:1px solid rgba(255,255,255,.08);box-shadow:0 40px 100px rgba(0,0,0,.5);overflow:hidden;position:relative;z-index:10}
+    .window-bar{background:#16163A;padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.05)}
+    .dot{width:10px;height:10px;border-radius:50%}.dot-r{background:#FF5F57}.dot-y{background:#FEBC2E}.dot-g{background:#28C840}
+    .window-url{flex:1;background:#0D0D2B;border-radius:6px;padding:4px 12px;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:rgba(255,255,255,.35);text-align:center}
+    .window-body{padding:24px;min-height:300px;position:relative}
+    .prompt-line{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px}
+    .prompt-icon{width:28px;height:28px;background:#FF4433;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;margin-top:2px}
+    .prompt-text{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.8);line-height:1.6}
+    .cursor{display:inline-block;width:2px;height:14px;background:#FF4433;margin-left:2px;vertical-align:middle;animation:blink 1s step-end infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+    .block-chip{position:absolute;border-radius:10px;display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:.72rem;font-weight:600;white-space:nowrap;border:1px solid rgba(255,255,255,.08)}
+    .chip-db{background:#1E3A2F;color:#4ADE80;top:70px;left:24px}
+    .chip-auth{background:#2D1F3D;color:#C084FC;top:70px;right:24px}
+    .chip-domain{background:#1E2D3D;color:#60A5FA;bottom:60px;left:24px}
+    .chip-deploy{background:#3D2210;color:#FB923C;bottom:60px;right:24px}
+    .progress-wrap{margin-top:16px;background:rgba(255,255,255,.06);border-radius:9999px;height:4px;overflow:hidden}
+    .progress-bar{height:100%;background:linear-gradient(90deg,#FF4433,#FFBB33);border-radius:9999px;width:0%}
+    .status-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .status-pill{padding:4px 10px;border-radius:9999px;font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;opacity:0}
+    .sp-green{background:rgba(74,222,128,.15);color:#4ADE80;border:1px solid rgba(74,222,128,.2)}
+    .sp-purple{background:rgba(192,132,252,.15);color:#C084FC;border:1px solid rgba(192,132,252,.2)}
+    .sp-blue{background:rgba(96,165,250,.15);color:#60A5FA;border:1px solid rgba(96,165,250,.2)}
+    .sp-orange{background:rgba(251,146,60,.15);color:#FB923C;border:1px solid rgba(251,146,60,.2)}
+    .live-badge{background:#16A34A;color:#fff;font-family:'Bricolage Grotesque',sans-serif;font-size:.65rem;font-weight:700;padding:3px 10px;border-radius:9999px;letter-spacing:.06em;text-transform:uppercase;opacity:0;display:flex;align-items:center;gap:5px;flex-shrink:0;margin-left:8px}
+    .live-dot{width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse-dot 1.5s ease-in-out infinite}
+    @keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+    .float-label{position:absolute;font-family:'Bricolage Grotesque',sans-serif;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.25);letter-spacing:.04em;opacity:0;pointer-events:none}
+    .step-counter{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:20}
+    .step-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15);transition:background .3s,transform .3s}
+    .step-dot.active{background:#FF4433;transform:scale(1.4)}
+
+    /* ═══ SECTION BACKGROUNDS ═══ */
+    .bg-dark{background:#0D0D2B;color:#FFF8F0}
+    .bg-cream{background:#FFF8F0;color:#0D0D2B}
+    .bg-dark-mid{background:#14142E;color:#FFF8F0}
+
+    /* ═══ CARDS ═══ */
+    .card-glass{
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:20px;
+      padding:32px;
+      transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+    }
+    .card-glass:hover{
+      transform:translateY(-4px);
+      border-color:rgba(249,115,22,.25);
+      box-shadow:0 20px 50px rgba(0,0,0,.3);
+    }
+    .card-cream{
+      background:#FFF8F0;
+      border:1px solid #E5D9CA;
+      border-radius:20px;
+      padding:32px;
+      transition:transform .3s ease,box-shadow .3s ease;
+    }
+    .card-cream:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 50px rgba(26,26,15,.1);
+    }
+
+    /* ═══ Before / After ═══ */
+    .card-before{background:#0D0D2B;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px;color:#7A7A90}
+    .card-before .head{color:rgba(255,255,255,.35);font-size:.7rem}
+    .card-before li strong{color:#B0B0CC}
+    .card-after{background:linear-gradient(135deg,#FF4433,#E03328);border-radius:20px;padding:36px;color:rgba(255,255,255,.85)}
+    .card-after .head{color:rgba(255,255,255,.5);font-size:.7rem}
+    .card-after li{color:#fff}
+    .card-after li strong{color:#fff;font-weight:700}
+
+    /* ═══ Signup grain ═══ */
+    .signup-grain{position:relative;background:linear-gradient(140deg,#FFBB33 0%,#FF4433 50%,#7B68EE 100%);overflow:hidden;border-radius:24px}
+    .signup-grain::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='grain2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23grain2)' opacity='1'/%3E%3C/svg%3E")}
+
+    /* ═══ Horizontal scroll ═══ */
+    .how-track{display:flex;gap:24px;width:max-content;will-change:transform}
+    .how-card{width:min(440px,82vw);flex-shrink:0;border-radius:20px;padding:48px 40px}
+    .how-num{font-family:'Bricolage Grotesque',sans-serif;font-size:5.5rem;font-weight:800;line-height:1;color:rgba(249,115,22,.1)}
+    .testi-track{display:flex;gap:20px;width:max-content;will-change:transform}
+    .testi-card{width:min(380px,82vw);flex-shrink:0;border-radius:20px;padding:32px}
+  </style>
+</head>
+
+<body>
+
+<!-- ═══ NAV — floating pill ═══ -->
+<header>
+  <nav class="fixed top-4 left-4 right-4 z-50 flex justify-center" aria-label="Main navigation">
+    <div class="nav-blur rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-lg shadow-black/30 max-w-3xl w-full" style="background:rgba(13,13,43,.65);border:1px solid rgba(255,255,255,.08)">
+
+      <!-- Logo -->
+      <a href="#" aria-label="Souped — home" class="mr-auto pl-2">
+        <img src="logo-white.svg" alt="Souped" class="h-5">
+      </a>
+
+      <!-- Center links (desktop) -->
+      <div class="hidden md:flex items-center rounded-xl px-1.5 py-1 gap-0.5" style="background:rgba(255,255,255,.06)">
+        <a href="#how" class="text-[.8rem] font-medium text-white/55 hover:text-white hover:bg-white/10 px-4 py-1.5 rounded-lg transition-all">How it works</a>
+        <a href="#features" class="text-[.8rem] font-medium text-white/55 hover:text-white hover:bg-white/10 px-4 py-1.5 rounded-lg transition-all">Features</a>
+        <a href="#faq" class="text-[.8rem] font-medium text-white/55 hover:text-white hover:bg-white/10 px-4 py-1.5 rounded-lg transition-all">FAQ</a>
+      </div>
+
+      <!-- CTA + mobile toggle -->
+      <div class="flex items-center gap-2 ml-auto">
+        <a href="#signup" class="bg-orange text-white text-[.8rem] font-semibold px-5 py-2 rounded-xl hover:bg-orange-dk transition-colors">Start building</a>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <span class="block w-4.5 h-0.5 bg-white/70 transition-transform" id="ham-1" aria-hidden="true"></span>
+          <span class="block w-4.5 h-0.5 bg-white/70 transition-opacity" id="ham-2" aria-hidden="true"></span>
+          <span class="block w-4.5 h-0.5 bg-white/70 transition-transform" id="ham-3" aria-hidden="true"></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile menu drawer (floats below the pill) -->
+  <nav id="mobile-menu" class="md:hidden fixed top-20 left-4 right-4 z-50 overflow-hidden transition-all duration-300 rounded-2xl" style="max-height:0" aria-label="Mobile navigation">
+      <div class="nav-blur shadow-lg shadow-black/30 rounded-2xl px-6 py-5 flex flex-col gap-4" style="background:rgba(13,13,43,.8);border:1px solid rgba(255,255,255,.08)">
+        <a href="#how" class="mobile-nav-link text-sm font-medium text-white/60 hover:text-white transition-colors">How it works</a>
+        <a href="#features" class="mobile-nav-link text-sm font-medium text-white/60 hover:text-white transition-colors">Features</a>
+        <a href="#faq" class="mobile-nav-link text-sm font-medium text-white/60 hover:text-white transition-colors">FAQ</a>
+        <a href="#signup" class="mobile-nav-link text-sm font-medium text-orange hover:text-orange-dk transition-colors">Sign up</a>
+      </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ═══ HERO — mesh gradient + conversational mock ═══ -->
+<section id="hero" class="mesh-hero flex flex-col px-6 pt-28 lg:pt-36 pb-16" aria-labelledby="hero-h1">
+  <div class="mesh-bg" aria-hidden="true"></div>
+  <div class="mesh-orb mesh-orb-1" aria-hidden="true"></div>
+  <div class="mesh-orb mesh-orb-2" aria-hidden="true"></div>
+  <div class="mesh-orb mesh-orb-3" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto w-full flex-1 flex items-center">
+
+    <!-- Split: 2 columns on desktop, stacked on mobile -->
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+
+      <!-- LEFT — Text -->
+      <div>
+        <div class="hero-anim mb-5" style="animation-delay:.1s">
+          <span class="pill text-orange border-orange/40">✦ Introducing Conversational Production</span>
+        </div>
+        <h1 id="hero-h1" class="hero-anim font-display font-extrabold text-[clamp(2.6rem,5.5vw,4.2rem)] leading-[0.95] tracking-tight text-white mb-5" style="animation-delay:.25s">
+          Describing it<br><em class="not-italic text-orange">is</em> shipping it.
+        </h1>
+        <p class="hero-anim text-base md:text-lg text-white/50 max-w-md leading-relaxed mb-8" style="animation-delay:.42s">
+          Souped is the first platform where describing an idea and having it live in production are one and the same.
+        </p>
+        <div class="hero-anim flex flex-wrap gap-3" style="animation-delay:.56s">
+          <a href="#signup" class="bg-orange text-white font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start building →</a>
+          <a href="#assembly" class="border border-white/15 text-white/70 font-semibold text-sm px-7 py-3.5 rounded-xl hover:border-white/35 hover:text-white transition-all">See how it works</a>
+        </div>
+      </div>
+
+      <!-- RIGHT — Product showcase (aspirational) -->
+      <div class="hero-anim" style="animation-delay:.6s;animation-fill-mode:both" aria-hidden="true" role="presentation">
+        <div style="animation:hero-float 5s ease-in-out infinite alternate">
+        <div class="space-y-3">
+
+          <!-- Card 1 — featured product -->
+          <div class="hero-anim rounded-2xl overflow-hidden border border-white/10 shadow-xl shadow-black/30" style="background:rgba(13,13,43,.55);backdrop-filter:blur(16px);animation-delay:.85s">
+            <div class="h-28 relative overflow-hidden" style="background:linear-gradient(135deg,#FFBB33,#FF4433)">
+              <div class="absolute inset-0 flex items-end px-5 pb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center shadow-lg"><span class="text-lg">💬</span></div>
+                  <div>
+                    <p class="font-display font-bold text-sm text-white drop-shadow">Feedback Hub</p>
+                    <p class="text-[.65rem] text-white/70">Collect and manage team feedback</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="px-5 py-3.5 flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <div class="flex -space-x-1.5">
+                  <div class="w-5 h-5 rounded-full bg-amber border-2 border-[#14142E]"></div>
+                  <div class="w-5 h-5 rounded-full bg-violet border-2 border-[#14142E]"></div>
+                  <div class="w-5 h-5 rounded-full bg-orange border-2 border-[#14142E]"></div>
+                </div>
+                <span class="text-[.65rem] text-white/40 ml-2">847 people use this</span>
+              </div>
+              <span class="text-[.6rem] font-semibold text-green-400 bg-green-500/15 px-2 py-0.5 rounded-full border border-green-500/15">Live</span>
+            </div>
+          </div>
+
+          <!-- Cards 2 & 3 — side by side -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="hero-anim rounded-2xl overflow-hidden border border-white/10 shadow-lg shadow-black/20" style="background:rgba(13,13,43,.55);backdrop-filter:blur(16px);animation-delay:1.05s">
+              <div class="h-20 relative overflow-hidden" style="background:linear-gradient(135deg,#7B68EE,#5B48CE)">
+                <div class="absolute inset-0 flex items-end px-4 pb-3">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center"><span class="text-xs">🎯</span></div>
+                    <p class="font-display font-bold text-[.72rem] text-white drop-shadow">Goal Tracker</p>
+                  </div>
+                </div>
+              </div>
+              <div class="px-4 py-2.5 flex items-center justify-between">
+                <span class="text-[.6rem] text-white/35">612 users</span>
+                <span class="text-[.55rem] font-semibold text-green-400">Live</span>
+              </div>
+            </div>
+            <div class="hero-anim rounded-2xl overflow-hidden border border-white/10 shadow-lg shadow-black/20" style="background:rgba(13,13,43,.55);backdrop-filter:blur(16px);animation-delay:1.2s">
+              <div class="h-20 relative overflow-hidden" style="background:linear-gradient(135deg,#FF4433,#CC2222)">
+                <div class="absolute inset-0 flex items-end px-4 pb-3">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center"><span class="text-xs">📋</span></div>
+                    <p class="font-display font-bold text-[.72rem] text-white drop-shadow">Client Portal</p>
+                  </div>
+                </div>
+              </div>
+              <div class="px-4 py-2.5 flex items-center justify-between">
+                <span class="text-[.6rem] text-white/35">388 users</span>
+                <span class="text-[.55rem] font-semibold text-green-400">Live</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom tagline -->
+          <div class="hero-anim text-center pt-1" style="animation-delay:1.35s">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[.7rem] font-medium text-white/40" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400" style="animation:pulse-dot 1.5s ease-in-out infinite"></span>
+              All built by describing what they wanted
+            </span>
+          </div>
+
+        </div>
+      </div></div>
+
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="hero-anim relative z-10 pt-10" style="animation-delay:.85s">
+    <div class="marquee-wrap border-y border-white/5 py-4">
+      <div class="marquee-track mq-fwd">
+        <span class="font-display font-semibold text-sm text-white/25 mx-10">1,200+ apps shipped</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10">avg. 47 min first deploy</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10">$0 paid to builders</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10">ship in under 90 min</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10">1,200+ apps shipped</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10">avg. 47 min first deploy</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10">$0 paid to builders</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10">ship in under 90 min</span><span class="text-orange/30 mx-3">·</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ ASSEMBLY (scroll-driven) ═══ -->
+<section id="assembly" class="bg-dark" aria-label="How Souped works — interactive demo">
+  <!-- Screen reader fallback (H2) -->
+  <div class="sr-only">
+    <h2>How Souped works</h2>
+    <ol>
+      <li>Describe: Write what you want to build in plain English.</li>
+      <li>Build: Souped sets up database, auth, and environment variables automatically.</li>
+      <li>Deploy: Your app goes live with a real URL and custom domain.</li>
+      <li>Monitor: Issues are caught before your users notice.</li>
+    </ol>
+  </div>
+  <div style="height:400vh">
+    <div style="position:sticky;top:64px;height:calc(100vh - 64px);display:flex;align-items:center;justify-content:center;overflow:hidden">
+      <div class="step-counter" aria-hidden="true">
+        <div class="step-dot active" id="sd-0"></div><div class="step-dot" id="sd-1"></div><div class="step-dot" id="sd-2"></div><div class="step-dot" id="sd-3"></div>
+      </div>
+      <div id="asm-intro" class="absolute inset-0 flex items-center justify-center text-center pointer-events-none z-5 px-8" style="opacity:0">
+        <div>
+          <p class="font-display font-bold text-xs uppercase tracking-[.14em] text-orange mb-3">Watch it happen</p>
+          <h2 class="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-white leading-tight">From description<br>to production</h2>
+        </div>
+      </div>
+      <div id="app-window" class="app-window" style="opacity:0;transform:scale(.85) translateY(40px)">
+        <div class="window-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="window-url" id="win-url">souped.app</div><div class="live-badge" id="live-badge"><div class="live-dot"></div> Live</div></div>
+        <div class="window-body">
+          <div id="step-describe" style="opacity:0">
+            <div class="prompt-line"><div class="prompt-text">Build me a feedback tool for my team.<br>Users log in, submit feedback, and I<br>can review it from a dashboard.<span class="cursor"></span></div></div>
+          </div>
+          <div id="step-processing" style="opacity:0;position:absolute;top:24px;left:24px;right:24px">
+            <p class="font-mono text-xs text-orange/70 mb-3">→ Souping your idea...</p>
+            <div class="progress-wrap"><div class="progress-bar" id="prog-bar"></div></div>
+            <div class="status-row">
+              <span class="status-pill sp-green" id="sp1">✓ Schema ready</span>
+              <span class="status-pill sp-purple" id="sp2">✓ Auth configured</span>
+              <span class="status-pill sp-blue" id="sp3">✓ Domain assigned</span>
+              <span class="status-pill sp-orange" id="sp4">✓ Deploying</span>
+            </div>
+          </div>
+          <div id="step-live" style="opacity:0;position:absolute;top:0;left:0;right:0;bottom:0">
+            <div style="padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between">
+              <span class="font-display font-bold text-sm text-white">Feedback Dashboard</span>
+              <span style="font-size:.65rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace">3 new items</span>
+            </div>
+            <div style="padding:16px 24px;display:flex;flex-direction:column;gap:8px">
+              <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.06)"><p style="font-size:.72rem;color:rgba(255,255,255,.7);margin-bottom:4px">"The search is really fast now 🔥"</p><p style="font-size:.62rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace">maria@team.co · 2m ago</p></div>
+              <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.06)"><p style="font-size:.72rem;color:rgba(255,255,255,.7);margin-bottom:4px">"Export to CSV would be great"</p><p style="font-size:.62rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace">carlos@team.co · 5m ago</p></div>
+              <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.06)"><p style="font-size:.72rem;color:rgba(255,255,255,.7);margin-bottom:4px">"Works perfectly on mobile 👌"</p><p style="font-size:.62rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace">ana@team.co · 12m ago</p></div>
+            </div>
+          </div>
+          <div class="block-chip chip-db" id="chip-db" style="opacity:0;transform:translate(-80px,40px)"><span>🗄️</span> Database</div>
+          <div class="block-chip chip-auth" id="chip-auth" style="opacity:0;transform:translate(80px,40px)"><span>🔐</span> Auth</div>
+          <div class="block-chip chip-domain" id="chip-domain" style="opacity:0;transform:translate(-80px,-40px)"><span>🌐</span> Domain</div>
+          <div class="block-chip chip-deploy" id="chip-deploy" style="opacity:0;transform:translate(80px,-40px)"><span>🚀</span> Deploy</div>
+        </div>
+      </div>
+      <div class="float-label" id="fl1" style="top:20%;left:5%;transform:rotate(-4deg)">no engineers</div>
+      <div class="float-label" id="fl2" style="top:25%;right:6%;transform:rotate(3deg)">no pipelines</div>
+      <div class="float-label" id="fl3" style="bottom:22%;left:7%;transform:rotate(2deg)">no DevOps</div>
+      <div class="float-label" id="fl4" style="bottom:20%;right:5%;transform:rotate(-3deg)">just describe it</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ STATS BENTO — Exergy3-inspired ═══ -->
+<section id="stats" class="bg-cream py-32 px-6" aria-label="Souped by the numbers">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.2rem)] leading-tight text-ink mb-14">
+      The true cost of<br>the <span class="text-orange">Idea Tax</span>
+    </h2>
+
+    <!-- Bento grid -->
+    <div class="grid grid-cols-12 gap-4 auto-rows-auto">
+
+      <!-- Card 1: Time — large, mint green, spans 7 cols -->
+      <div class="col-span-12 md:col-span-7 bento-card rounded-3xl p-10" style="background:#FFBB33;min-height:280px;opacity:0;transform:translateY(40px) scale(.95)">
+        <div class="flex items-center gap-2 mb-1">
+          <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-ink/50">Average time wasted</p>
+        </div>
+        <div class="border-t border-dashed border-ink/15 mb-6 mt-2"></div>
+        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px #1A1A0F;" data-count="6" data-suffix=" mo">0 mo</p>
+        <p class="text-ink/60 text-sm leading-relaxed mt-4 max-w-sm">The average idea sits in a backlog for 6 months before anyone even looks at it. With Souped, it ships the same day.</p>
+      </div>
+
+      <!-- Card 2: Cost — spans 5 cols, orange -->
+      <div class="col-span-12 md:col-span-5 bento-card rounded-3xl p-10" style="background:#FF4433;min-height:280px;opacity:0;transform:translateY(40px) scale(.95)">
+        <div class="flex items-center gap-2 mb-1">
+          <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-white/50">Budget burned</p>
+        </div>
+        <div class="border-t border-dashed border-white/20 mb-6 mt-2"></div>
+        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.85);" data-count="15" data-prefix="$" data-suffix="k">$0k</p>
+        <p class="text-white/70 text-sm leading-relaxed mt-4 max-w-sm">A simple internal tool can cost up to $15k before even going live. With Souped, it's $0 in engineering.</p>
+      </div>
+
+      <!-- Card 3: Apps shipped — spans 5 cols, dark -->
+      <div class="col-span-12 md:col-span-5 bento-card rounded-3xl p-10" style="background:#7B68EE;min-height:260px;opacity:0;transform:translateY(40px) scale(.95)">
+        <div class="flex items-center gap-2 mb-1">
+          <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-white/35">Apps shipped</p>
+        </div>
+        <div class="border-t border-dashed border-white/10 mb-6 mt-2"></div>
+        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2.5px rgba(255,255,255,.5);" data-count="1200" data-suffix="+">0+</p>
+        <p class="text-white/60 text-sm leading-relaxed mt-4">Real products, built and deployed by real people who just described what they wanted.</p>
+      </div>
+
+      <!-- Card 4: Speed — spans 7 cols, cream-dark -->
+      <div class="col-span-12 md:col-span-7 bento-card rounded-3xl p-10" style="background:#F3EBE0;min-height:260px;opacity:0;transform:translateY(40px) scale(.95)">
+        <div class="flex items-center gap-2 mb-1">
+          <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-ink/40">Average first deploy</p>
+        </div>
+        <div class="border-t border-dashed border-ink/12 mb-6 mt-2"></div>
+        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px #1A1A0F;" data-count="90" data-prefix="< " data-suffix="m">< 0m</p>
+        <p class="text-ink/50 text-sm leading-relaxed mt-4 max-w-sm">Most users ship their first app in under 90 minutes. Some in under 30. No engineers, no pipelines, no permission needed.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ PROBLEM — light section ═══ -->
+<section id="problem" class="bg-cream pb-32 px-6" aria-labelledby="problem-h2">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-2xl mb-16">
+      <h2 id="problem-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-ink mb-5">
+        You've been paying<br>the <span class="text-orange">Idea Tax</span>
+      </h2>
+      <p class="reveal delay-1 text-lg text-ink-muted leading-relaxed max-w-xl">
+        Every idea you've ever had came with an invisible bill on time, money, pipelines, and meetings. At Souped, we call that bill the Idea Tax, and until now, everyone paid it.
+      </p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card-before reveal-left" aria-label="Before Souped">
+        <h3 class="head font-display font-bold uppercase tracking-[.12em] mb-7">Before Souped</h3>
+        <ul class="space-y-5">
+          <li class="flex gap-3.5"><span class="text-red-400 mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Time.</strong> Your idea sat in a backlog while other priorities came first.</span></li>
+          <li class="flex gap-3.5"><span class="text-red-400 mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Budget.</strong> A simple tool could cost up to $15k before even being live.</span></li>
+          <li class="flex gap-3.5"><span class="text-red-400 mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Permission.</strong> You needed others' calendars, approval, and capacity.</span></li>
+          <li class="flex gap-3.5"><span class="text-red-400 mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Gap.</strong> All the steps were a full-time job, discouraging your idea.</span></li>
+        </ul>
+      </div>
+      <div class="card-after reveal-right" aria-label="With Souped">
+        <h3 class="head font-display font-bold uppercase tracking-[.12em] mb-7">With Souped</h3>
+        <ul class="space-y-5">
+          <li class="flex gap-3.5"><span class="mt-0.5 flex-shrink-0 font-bold">✓</span><span><strong>Describe it.</strong> What you want, why, and for whom, in plain English.</span></li>
+          <li class="flex gap-3.5"><span class="mt-0.5 flex-shrink-0 font-bold">✓</span><span><strong>Deploy it.</strong> Database, auth, and custom domain live.</span></li>
+          <li class="flex gap-3.5"><span class="mt-0.5 flex-shrink-0 font-bold">✓</span><span><strong>Monitor it.</strong> We monitor it so issues are caught before anyone notices.</span></li>
+          <li class="flex gap-3.5"><span class="mt-0.5 flex-shrink-0 font-bold">✓</span><span><strong>You did it!</strong> No engineer, approval, or pipeline. Your idea <em>is</em> a product.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ HOW — horizontal scroll on dark ═══ -->
+<section id="how" class="bg-dark" aria-labelledby="how-h2">
+  <div style="height:250vh">
+    <div style="position:sticky;top:64px;height:calc(100vh - 64px);display:flex;flex-direction:column;justify-content:center;overflow:hidden" class="px-6 pt-12">
+      <div class="max-w-6xl mx-auto w-full mb-10">
+        <p class="reveal font-display font-bold text-xs uppercase tracking-[.12em] text-orange mb-4">Three steps. That's it.</p>
+        <h2 id="how-h2" class="reveal delay-1 font-display font-extrabold text-[clamp(1.5rem,3.2vw,2.2rem)] leading-snug text-white">
+          Souping is what happens after<br>you describe what you want, bringing<br>your ideas to life in under 90 minutes.
+        </h2>
+      </div>
+      <div class="overflow-hidden">
+        <div class="how-track" id="how-track">
+
+          <!-- Card 1: Describe — mint green -->
+          <div class="how-card rounded-3xl" style="background:#FFBB33;">
+            <div class="flex items-center gap-2 mb-1">
+              <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-ink/45">Step 01</p>
+            </div>
+            <div class="border-t border-dashed border-ink/15 mb-5 mt-2"></div>
+            <p class="font-display font-extrabold text-[clamp(4rem,8vw,6rem)] leading-[0.85] tracking-tight mb-4" style="color:transparent;-webkit-text-stroke:2px #1A1A0F;">01</p>
+            <h3 class="font-display font-extrabold text-3xl text-ink mb-3">Describe</h3>
+            <p class="text-ink/55 leading-relaxed text-base">Write what you want to build. Just describe it, and we'll handle the solution.</p>
+          </div>
+
+          <!-- Card 2: Deploy — orange -->
+          <div class="how-card rounded-3xl" style="background:#FF4433;">
+            <div class="flex items-center gap-2 mb-1">
+              <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-white/45">Step 02</p>
+            </div>
+            <div class="border-t border-dashed border-white/20 mb-5 mt-2"></div>
+            <p class="font-display font-extrabold text-[clamp(4rem,8vw,6rem)] leading-[0.85] tracking-tight mb-4" style="color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.7);">02</p>
+            <h3 class="font-display font-extrabold text-3xl text-white mb-3">Deploy</h3>
+            <p class="text-white/70 leading-relaxed text-base">Your product goes live with a database, auth, environment variables, and a real URL.</p>
+          </div>
+
+          <!-- Card 3: Monitor — dark -->
+          <div class="how-card rounded-3xl" style="background:#7B68EE;">
+            <div class="flex items-center gap-2 mb-1">
+              <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-white/50">Step 03</p>
+            </div>
+            <div class="border-t border-dashed border-white/10 mb-5 mt-2"></div>
+            <p class="font-display font-extrabold text-[clamp(4rem,8vw,6rem)] leading-[0.85] tracking-tight mb-4" style="color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.2);">03</p>
+            <h3 class="font-display font-extrabold text-3xl text-white mb-3">Monitor</h3>
+            <p class="text-white/60 leading-relaxed text-base">We catch any break before your users do and notify you instantly.</p>
+          </div>
+
+          <div style="width:100px;flex-shrink:0"></div>
+        </div>
+      </div>
+      <div class="max-w-6xl mx-auto w-full mt-8" id="how-pill" style="opacity:0">
+        <span class="pill text-sage border-sage/40">Your idea, souped up! 🍲</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ WHO — light ═══ -->
+<section id="who" class="bg-cream py-32 px-6" aria-labelledby="who-h2">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-xl mb-14">
+      <h2 id="who-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-ink">
+        Nothing will hold<br>you back anymore
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+      <article class="card-cream reveal delay-1">
+        <p class="font-display font-bold text-lg text-ink leading-snug mb-4">"I have an idea but no developer."</p>
+        <p class="text-ink-muted leading-relaxed">You describe what you want, Souped builds it and deploys it, and your idea is live.</p>
+      </article>
+      <article class="card-cream reveal delay-2">
+        <p class="font-display font-bold text-lg text-ink leading-snug mb-4">"I build with AI but can't deploy."</p>
+        <p class="text-ink-muted leading-relaxed">Souped wires your code's environment on your favorite platform, and ships it.</p>
+      </article>
+      <article class="card-cream reveal delay-3">
+        <p class="font-display font-bold text-lg text-ink leading-snug mb-4">"I need proof this is prod-grade."</p>
+        <p class="text-ink-muted leading-relaxed">Audit logs, role-based access, monitoring, and SSO. Compliance teams love it.</p>
+      </article>
+    </div>
+    <div class="text-center reveal delay-4">
+      <p class="text-ink-muted mb-7">You control shipping, purchases, and alerts.</p>
+      <a href="#signup" class="bg-orange text-white font-semibold text-sm px-8 py-4 rounded-full hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start getting souped! →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FEATURES — dark ═══ -->
+<section id="features" class="bg-dark py-32 px-6" aria-labelledby="feat-h2">
+  <div class="max-w-6xl mx-auto">
+    <div class="max-w-xl mb-14">
+      <h2 id="feat-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-white">
+        Cut the gap between<br>building and shipping
+      </h2>
+    </div>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <article class="card-glass reveal delay-1"><div class="text-3xl mb-4" aria-hidden="true">🚀</div><h3 class="font-display font-bold text-lg text-white mb-2">Deploy</h3><p class="text-white/60 text-sm leading-relaxed">Your app, live with database, auth, and custom domain included.</p></article>
+      <article class="card-glass reveal delay-2"><div class="text-3xl mb-4" aria-hidden="true">🩺</div><h3 class="font-display font-bold text-lg text-white mb-2">Monitor</h3><p class="text-white/60 text-sm leading-relaxed">Detectors track health in production. Issues are caught before users complain.</p></article>
+      <article class="card-glass reveal delay-3"><div class="text-3xl mb-4" aria-hidden="true">🔔</div><h3 class="font-display font-bold text-lg text-white mb-2">Notify</h3><p class="text-white/60 text-sm leading-relaxed">Your team is instantly notified of completed deployments, health alerts, and feedback.</p></article>
+      <article class="card-glass reveal delay-1"><div class="text-3xl mb-4" aria-hidden="true">🔐</div><h3 class="font-display font-bold text-lg text-white mb-2">Access</h3><p class="text-white/60 text-sm leading-relaxed">You decide who sees what, whether different members, clients, or users.</p></article>
+      <article class="card-glass reveal delay-2"><div class="text-3xl mb-4" aria-hidden="true">📊</div><h3 class="font-display font-bold text-lg text-white mb-2">Organize</h3><p class="text-white/60 text-sm leading-relaxed">A single, intuitive dashboard to track projects, teams, and credentials.</p></article>
+      <article class="card-glass reveal delay-3"><div class="text-3xl mb-4" aria-hidden="true">🤖</div><h3 class="font-display font-bold text-lg text-white mb-2">AI Skills</h3><p class="text-white/60 text-sm leading-relaxed">Vetted skills for frontend, backend, design, testing, and security.</p></article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ TESTIMONIALS — light, horizontal slide ═══ -->
+<section id="reviews" class="bg-cream" aria-labelledby="reviews-h2">
+  <div style="height:180vh">
+    <div style="position:sticky;top:64px;height:calc(100vh - 64px);display:flex;flex-direction:column;justify-content:center;overflow:hidden" class="px-6">
+      <div class="max-w-6xl mx-auto w-full mb-10">
+        <h2 id="reviews-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-ink">Don't take our word for it</h2>
+      </div>
+      <div class="overflow-hidden">
+        <div class="testi-track" id="testi-track">
+          <article class="testi-card card-cream">
+            <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-full bg-orange flex items-center justify-center text-white font-display font-bold text-sm flex-shrink-0">AM</div><div><p class="font-semibold text-sm text-ink">Alex M.</p><p class="text-xs text-ink-muted">Indie Hacker</p></div></div>
+            <p class="text-ink-mid leading-relaxed">"I shipped my first SaaS in 40 minutes. No DevOps, no headaches. Just described it and it was live."</p>
+          </article>
+          <article class="testi-card card-cream">
+            <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-full bg-ink flex items-center justify-center text-cream font-display font-bold text-sm flex-shrink-0">SL</div><div><p class="font-semibold text-sm text-ink">Sarah L.</p><p class="text-xs text-ink-muted">Product Manager</p></div></div>
+            <p class="text-ink-mid leading-relaxed">"Finally, a tool that doesn't make me feel like I need a CS degree. Described my app, and it was deployed with a real domain."</p>
+          </article>
+          <article class="testi-card card-cream">
+            <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-full bg-sage flex items-center justify-center text-white font-display font-bold text-sm flex-shrink-0">JK</div><div><p class="font-semibold text-sm text-ink">James K.</p><p class="text-xs text-ink-muted">Engineering Lead</p></div></div>
+            <p class="text-ink-mid leading-relaxed">"Our compliance team was skeptical. Then they saw the audit logs, RBAC, and SSO. We're moving the whole team over."</p>
+          </article>
+          <div style="width:60px;flex-shrink:0"></div>
+        </div>
+      </div>
+      <div class="marquee-wrap border-y border-cream-dark py-4 mt-10">
+        <div class="marquee-track mq-rev">
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10">1,200+ apps shipped</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10">avg. 47 min first deploy</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10">$0 paid to builders</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10">ship in under 90 min</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10">1,200+ apps shipped</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10">avg. 47 min first deploy</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10">$0 paid to builders</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10">ship in under 90 min</span><span class="text-orange/30 mx-3">·</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FAQ — dark ═══ -->
+<section id="faq" class="bg-dark py-32 px-6" aria-labelledby="faq-h2">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="pill text-orange border-orange/30 reveal inline-block mb-5">Your ideas, souped up from description to production.</span>
+      <h2 id="faq-h2" class="reveal delay-1 font-display font-extrabold text-[clamp(2rem,5vw,3.25rem)] leading-tight text-white">Good questions deserve<br>real answers</h2>
+    </div>
+    <ul class="space-y-2 list-none">
+      <li class="faq-item reveal delay-1 rounded-2xl border border-white/10 overflow-hidden" data-open="false" style="background:rgba(255,255,255,.03)">
+        <button id="faq-btn-1" class="w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="faq-panel-1"><span class="font-display font-semibold text-base md:text-lg text-white">What is Conversational Production?</span><span class="faq-icon text-orange text-2xl flex-shrink-0" aria-hidden="true">+</span></button>
+        <div class="faq-body" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1"><div><p class="px-6 pb-6 text-white/60 leading-relaxed text-sm md:text-base">Invented by Souped, Conversational Production focuses on describing what you want to build and having it live in production in a single action. It requires no code, deploy pipelines, or infrastructure knowledge.</p></div></div>
+      </li>
+      <li class="faq-item reveal delay-2 rounded-2xl border border-white/10 overflow-hidden" data-open="false" style="background:rgba(255,255,255,.03)">
+        <button id="faq-btn-2" class="w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="faq-panel-2"><span class="font-display font-semibold text-base md:text-lg text-white">Do I need to know how to code to use Conversational Production?</span><span class="faq-icon text-orange text-2xl flex-shrink-0" aria-hidden="true">+</span></button>
+        <div class="faq-body" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2"><div><p class="px-6 pb-6 text-white/60 leading-relaxed text-sm md:text-base">Nop, you simply describe what you want; Souped builds it, deploys it, and monitors it. The only requirement is an idea.</p></div></div>
+      </li>
+      <li class="faq-item reveal delay-3 rounded-2xl border border-white/10 overflow-hidden" data-open="false" style="background:rgba(255,255,255,.03)">
+        <button id="faq-btn-3" class="w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="faq-panel-3"><span class="font-display font-semibold text-base md:text-lg text-white">What is the Idea Tax?</span><span class="faq-icon text-orange text-2xl flex-shrink-0" aria-hidden="true">+</span></button>
+        <div class="faq-body" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3"><div><p class="px-6 pb-6 text-white/60 leading-relaxed text-sm md:text-base">The time, money, and permission you pay between having an idea and shipping it — including engineers, estimates, sprints, staging environments, and DevOps. Souped eliminates the Idea Tax entirely.</p></div></div>
+      </li>
+      <li class="faq-item reveal delay-4 rounded-2xl border border-white/10 overflow-hidden" data-open="false" style="background:rgba(255,255,255,.03)">
+        <button id="faq-btn-4" class="w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="faq-panel-4"><span class="font-display font-semibold text-base md:text-lg text-white">How fast can I ship my first app?</span><span class="faq-icon text-orange text-2xl flex-shrink-0" aria-hidden="true">+</span></button>
+        <div class="faq-body" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4"><div><p class="px-6 pb-6 text-white/60 leading-relaxed text-sm md:text-base">Most Souped users ship in under 90 minutes, and some even in under 30. If your first try takes longer than expected, contact us!</p></div></div>
+      </li>
+      <li class="faq-item reveal delay-5 rounded-2xl border border-white/10 overflow-hidden" data-open="false" style="background:rgba(255,255,255,.03)">
+        <button id="faq-btn-5" class="w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="faq-panel-5"><span class="font-display font-semibold text-base md:text-lg text-white">Who owns the apps I deploy?</span><span class="faq-icon text-orange text-2xl flex-shrink-0" aria-hidden="true">+</span></button>
+        <div class="faq-body" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5"><div><p class="px-6 pb-6 text-white/60 leading-relaxed text-sm md:text-base">You do. Souped is the orchestration layer, but since apps deploy to your own Vercel and Supabase accounts, the infrastructure is always yours.</p></div></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ═══ SIGNUP ═══ -->
+<section id="signup" class="bg-cream py-20 px-6" aria-labelledby="signup-h2">
+  <div class="max-w-6xl mx-auto">
+    <div class="signup-grain px-10 py-16 md:px-16 lg:px-20 reveal">
+      <div class="relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Left — text -->
+        <div>
+          <h2 id="signup-h2" class="font-display font-extrabold text-[clamp(2rem,4.5vw,3.2rem)] text-white leading-tight mb-4">Your idea is one description away.</h2>
+          <p class="text-white/65 text-base leading-relaxed max-w-sm">No credit card. No engineer. No pipeline. Just describe what you want and watch it ship.</p>
+        </div>
+        <!-- Right — form -->
+        <div>
+          <form class="space-y-3" novalidate aria-label="Early access signup">
+            <label for="signup-email" class="sr-only">Email address</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input id="signup-email" type="email" placeholder="your@email.com" required autocomplete="email" aria-describedby="signup-error" class="flex-1 px-5 py-4 rounded-xl bg-white/15 text-white placeholder-white/45 border border-white/20 focus:outline-none focus:border-white/50 text-sm backdrop-blur-sm">
+              <button type="submit" class="bg-white text-ink font-semibold px-8 py-4 rounded-xl hover:bg-cream transition-colors whitespace-nowrap text-sm shadow-lg shadow-black/15">Get early access →</button>
+            </div>
+            <p id="signup-error" role="alert" class="text-white/80 text-sm" style="min-height:1.25rem"></p>
+          </form>
+          <div class="flex items-center gap-4 mt-4">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+              <span class="text-white/40 text-[.7rem]">Free to start</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+              <span class="text-white/40 text-[.7rem]">Ship in minutes</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+              <span class="text-white/40 text-[.7rem]">You own everything</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="bg-dark py-12 px-6 border-t border-white/5">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+    <div class="text-center md:text-left"><img src="logo-white.svg" alt="Souped" class="h-5 inline-block"><p class="text-white/35 text-xs mt-1.5">Describing it is shipping it.</p></div>
+    <nav class="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
+      <a href="#how" class="text-white/40 hover:text-white transition-colors">How it works</a>
+      <a href="#features" class="text-white/40 hover:text-white transition-colors">Features</a>
+      <a href="#faq" class="text-white/40 hover:text-white transition-colors">FAQ</a>
+      <a href="#signup" class="text-white/40 hover:text-white transition-colors">Sign up</a>
+    </nav>
+    <p class="text-white/30 text-xs">© 2025 Souped. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+/* ═══ REDUCED MOTION CHECK ═══ */
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ═══ (Hero is now static product showcase — no JS needed) ═══ */
+
+
+/* ═══ SKIP GSAP SCRUB IF REDUCED MOTION ═══ */
+if (prefersReduced) {
+  // Make all animated elements visible instantly
+  document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => el.classList.add('is-visible'));
+  document.querySelectorAll('.bento-card').forEach(el => { el.style.opacity='1'; el.style.transform='none'; });
+  document.querySelectorAll('#asm-intro,#app-window,#step-describe,#step-processing,#step-live,#live-badge,.block-chip,.float-label,.status-pill').forEach(el => { el.style.opacity='1'; el.style.transform='none'; });
+  document.getElementById('how-pill').style.opacity='1';
+  // Set bento numbers to final values
+  document.querySelectorAll('.bento-num').forEach(el => {
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    el.textContent = prefix + parseInt(el.dataset.count).toLocaleString() + suffix;
+  });
+}
+
+/* ═══ INTERSECTION OBSERVER — Exergy3-style reveal ═══ */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('is-visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObs.observe(el));
+
+
+/* ═══ ASSEMBLY (GSAP scrub) ═══ */
+if (!prefersReduced) {
+const asmTl = gsap.timeline({
+  scrollTrigger: {
+    trigger:'#assembly', start:'top top', end:'bottom bottom', scrub:1.2,
+    onUpdate(self) {
+      const p=self.progress, s=p<.25?0:p<.5?1:p<.75?2:3;
+      document.querySelectorAll('.step-dot').forEach((d,i)=>d.classList.toggle('active',i===s));
+    }
+  }
+});
+asmTl
+  .fromTo('#asm-intro',{opacity:0,y:30},{opacity:1,y:0,duration:.5},0)
+  .fromTo('#app-window',{opacity:0,scale:.82,y:50},{opacity:1,scale:1,y:0,duration:.6,ease:'back.out(1.4)'},.12)
+  .to('#asm-intro',{opacity:0,y:-20,duration:.3},.22)
+  .fromTo('#step-describe',{opacity:0},{opacity:1,duration:.25},.32)
+  .fromTo('#chip-db',{opacity:0,x:-80,y:40},{opacity:1,x:0,y:0,duration:.4,ease:'power3.out'},.44)
+  .fromTo('#chip-auth',{opacity:0,x:80,y:40},{opacity:1,x:0,y:0,duration:.4,ease:'power3.out'},.50)
+  .fromTo('#chip-domain',{opacity:0,x:-80,y:-40},{opacity:1,x:0,y:0,duration:.4,ease:'power3.out'},.56)
+  .fromTo('#chip-deploy',{opacity:0,x:80,y:-40},{opacity:1,x:0,y:0,duration:.4,ease:'power3.out'},.62)
+  .to('#step-describe',{opacity:0,duration:.2},.60)
+  .fromTo('#step-processing',{opacity:0},{opacity:1,duration:.25},.65)
+  .fromTo('#prog-bar',{width:'0%'},{width:'100%',duration:.35,ease:'power1.inOut'},.67)
+  .fromTo('#sp1',{opacity:0,y:6},{opacity:1,y:0,duration:.15},.70)
+  .fromTo('#sp2',{opacity:0,y:6},{opacity:1,y:0,duration:.15},.73)
+  .fromTo('#sp3',{opacity:0,y:6},{opacity:1,y:0,duration:.15},.76)
+  .fromTo('#sp4',{opacity:0,y:6},{opacity:1,y:0,duration:.15},.79)
+  .to(['#chip-db','#chip-auth','#chip-domain','#chip-deploy'],{opacity:0,scale:.7,duration:.2},.82)
+  .to('#step-processing',{opacity:0,duration:.2},.82)
+  .fromTo('#step-live',{opacity:0},{opacity:1,duration:.3},.85)
+  .fromTo('#live-badge',{opacity:0,y:8},{opacity:1,y:0,duration:.25},.88)
+  .fromTo('#fl1',{opacity:0,x:-10},{opacity:1,x:0,duration:.3},.87)
+  .fromTo('#fl2',{opacity:0,x:10},{opacity:1,x:0,duration:.3},.89)
+  .fromTo('#fl3',{opacity:0,x:-10},{opacity:1,x:0,duration:.3},.91)
+  .fromTo('#fl4',{opacity:0,x:10},{opacity:1,x:0,duration:.3},.93)
+  .call(()=>{document.getElementById('win-url').textContent='feedback.myteam.app'},[],.86);
+
+
+/* ═══ HOW — horizontal scroll ═══ */
+const howTrack = document.getElementById('how-track');
+const howWidth = howTrack.scrollWidth - window.innerWidth + 100;
+gsap.to(howTrack, {
+  x: -howWidth, ease:'none',
+  scrollTrigger: { trigger:'#how', start:'top top', end:'bottom bottom', scrub:1 }
+});
+gsap.to('#how-pill', {
+  opacity:1, duration:.3,
+  scrollTrigger: { trigger:'#how', start:'70% top', end:'bottom bottom', scrub:true }
+});
+
+
+/* ═══ TESTIMONIALS — horizontal slide ═══ */
+const testiTrack = document.getElementById('testi-track');
+const testiWidth = testiTrack.scrollWidth - window.innerWidth + 100;
+gsap.to(testiTrack, {
+  x: -testiWidth, ease:'none',
+  scrollTrigger: { trigger:'#reviews', start:'top top', end:'bottom bottom', scrub:1 }
+});
+
+
+/* ═══ BENTO STATS — stagger + counter ═══ */
+const bentoCards = gsap.utils.toArray('.bento-card');
+gsap.to(bentoCards, {
+  opacity:1, y:0, scale:1, duration:.6, stagger:.12, ease:'back.out(1.2)',
+  scrollTrigger: { trigger:'#stats .grid', start:'top 88%' },
+  onComplete() {
+    // Counter animation for each number
+    document.querySelectorAll('.bento-num').forEach(el => {
+      const target = parseInt(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const obj = { val: 0 };
+      gsap.to(obj, {
+        val: target,
+        duration: target > 100 ? 1.8 : 1,
+        ease: 'power2.out',
+        onUpdate() {
+          el.textContent = prefix + Math.round(obj.val).toLocaleString() + suffix;
+        }
+      });
+    });
+  }
+});
+
+} // end if (!prefersReduced)
+
+
+/* ═══ FAQ accordion ═══ */
+document.querySelectorAll('.faq-item button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item'), isOpen = item.dataset.open === 'true';
+    document.querySelectorAll('.faq-item').forEach(i => { i.dataset.open='false'; i.querySelector('button').setAttribute('aria-expanded','false'); });
+    if (!isOpen) { item.dataset.open='true'; btn.setAttribute('aria-expanded','true'); }
+  });
+});
+
+
+/* ═══ Signup ═══ */
+window.handleSignup = function(e) {
+  e.preventDefault();
+  const input = document.getElementById('signup-email');
+  const btn = e.target.querySelector('button[type="submit"]');
+  const err = document.getElementById('signup-error');
+  if (!input.value || !input.checkValidity()) {
+    err.textContent = 'Please enter a valid email address.';
+    input.focus();
+    return;
+  }
+  err.textContent = '';
+  btn.textContent = '✓ You\'re on the list!';
+  btn.disabled = true;
+  input.disabled = true;
+};
+
+
+/* ═══ Signup form listener (replaces inline onsubmit) ═══ */
+const signupForm = document.querySelector('form[aria-label="Early access signup"]');
+if (signupForm) signupForm.addEventListener('submit', handleSignup);
+
+/* ═══ Mobile nav link listeners (replaces inline onclick) ═══ */
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+/* ═══ Mobile menu (H5) ═══ */
+const menuBtn = document.getElementById('mobile-menu-btn');
+const menuDrawer = document.getElementById('mobile-menu');
+window.closeMobileMenu = function() {
+  menuDrawer.style.maxHeight = '0';
+  menuBtn.setAttribute('aria-expanded', 'false');
+};
+if (menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    const open = menuBtn.getAttribute('aria-expanded') === 'true';
+    if (open) {
+      closeMobileMenu();
+    } else {
+      menuDrawer.style.maxHeight = menuDrawer.scrollHeight + 'px';
+      menuBtn.setAttribute('aria-expanded', 'true');
+    }
+  });
+}
+
+/* ═══ Nav — subtle bg shift on scroll ═══ */
+const navPill = document.querySelector('header nav > div');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    navPill.style.background = 'rgba(13,13,43,.82)';
+    navPill.style.boxShadow = '0 8px 32px rgba(0,0,0,.35)';
+  } else {
+    navPill.style.background = 'rgba(13,13,43,.65)';
+    navPill.style.boxShadow = '0 4px 16px rgba(0,0,0,.2)';
+  }
+}, { passive: true });
+
+/* ═══ Smooth anchor scroll (L4) ═══ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
