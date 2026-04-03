@@ -33,7 +33,7 @@
           colors: {
             cream:'#FFF8F0','cream-mid':'#F3EBE0','cream-dark':'#E5D9CA',
             dark:'#080025','dark-mid':'#14142E','dark-card':'#1C1C38',
-            orange:'#FF4433','orange-dk':'#E03328','orange-lt':'#FF6B5E',
+            orange:'#FF6B35','orange-dk':'#E03328','orange-lt':'#FF6B5E',
             amber:'#FFBB33','amber-dk':'#E5A020',
             violet:'#7B68EE','violet-dk':'#6350D8','violet-lt':'#9B8AF5',
             ink:'#080025','ink-mid':'#2A2A4A','ink-muted':'#5A5A78',
@@ -129,10 +129,10 @@
     .faq-icon{transition:transform .35s cubic-bezier(.4,0,.2,1);line-height:1}
     .faq-item[data-open="true"] .faq-icon{transform:rotate(45deg)}
 
-    :focus-visible{outline:2px solid #FF4433;outline-offset:3px;border-radius:6px}
+    :focus-visible{outline:2px solid #FF6B35;outline-offset:3px;border-radius:6px}
     ::-webkit-scrollbar{width:4px}
     ::-webkit-scrollbar-track{background:#080025}
-    ::-webkit-scrollbar-thumb{background:#FF4433;border-radius:10px}
+    ::-webkit-scrollbar-thumb{background:#FF6B35;border-radius:10px}
 
     /* ═══ MESH GRADIENT HERO ═══ */
     .mesh-hero{
@@ -223,9 +223,9 @@
     .window-url{flex:1;background:#080025;border-radius:6px;padding:4px 12px;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:rgba(255,255,255,.35);text-align:center}
     .window-body{padding:24px;min-height:300px;position:relative}
     .prompt-line{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px}
-    .prompt-icon{width:28px;height:28px;background:#FF4433;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;margin-top:2px}
+    .prompt-icon{width:28px;height:28px;background:#FF6B35;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;margin-top:2px}
     .prompt-text{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.8);line-height:1.6}
-    .cursor{display:inline-block;width:3px;height:1em;background:#FF4433;vertical-align:baseline;margin-left:2px;vertical-align:middle;animation:blink 1s step-end infinite}
+    .cursor{display:inline-block;width:3px;height:1em;background:#FF6B35;vertical-align:baseline;margin-left:2px;vertical-align:middle;animation:blink 1s step-end infinite}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
     .block-chip{position:absolute;border-radius:10px;display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:.72rem;font-weight:600;white-space:nowrap;border:1px solid rgba(255,255,255,.08)}
     .chip-db{background:#1E3A2F;color:#4ADE80;top:70px;left:24px}
@@ -233,7 +233,7 @@
     .chip-domain{background:#1E2D3D;color:#60A5FA;bottom:60px;left:24px}
     .chip-deploy{background:#3D2210;color:#FB923C;bottom:60px;right:24px}
     .progress-wrap{margin-top:16px;background:rgba(255,255,255,.06);border-radius:9999px;height:4px;overflow:hidden}
-    .progress-bar{height:100%;background:linear-gradient(90deg,#FF4433,#FFBB33);border-radius:9999px;width:0%}
+    .progress-bar{height:100%;background:linear-gradient(90deg,#FF6B35,#FFBB33);border-radius:9999px;width:0%}
     .status-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
     .status-pill{padding:4px 10px;border-radius:9999px;font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;opacity:0}
     .sp-green{background:rgba(74,222,128,.15);color:#4ADE80;border:1px solid rgba(74,222,128,.2)}
@@ -246,7 +246,7 @@
     .float-label{position:absolute;font-family:'Bricolage Grotesque',sans-serif;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.25);letter-spacing:.04em;opacity:0;pointer-events:none}
     .step-counter{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:20}
     .step-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.15);transition:background .3s,transform .3s}
-    .step-dot.active{background:#FF4433;transform:scale(1.4)}
+    .step-dot.active{background:#FF6B35;transform:scale(1.4)}
 
     /* ═══ SECTION BACKGROUNDS ═══ */
     .bg-dark{background:#080025;color:#FFF8F0}
@@ -279,7 +279,7 @@
     }
 
     /* ═══ Before / After ═══ */
-    .card-before{background:linear-gradient(135deg,#FF4433,#CC2222);border-radius:20px;padding:36px;color:rgba(255,255,255,.7)}
+    .card-before{background:linear-gradient(135deg,#D94E1F,#AA1A1A);border-radius:20px;padding:36px;color:rgba(255,255,255,.7)}
     .card-before .head{color:rgba(255,255,255,.45);font-size:.7rem}
     .card-before li strong{color:rgba(255,255,255,.9)}
     .card-after{background:#FFBB33;border-radius:20px;padding:36px;color:rgba(8,0,37,.7)}
@@ -288,7 +288,7 @@
     .card-after li strong{color:#080025;font-weight:700}
 
     /* ═══ Signup grain ═══ */
-    .signup-grain{position:relative;background:linear-gradient(140deg,#FFBB33 0%,#FF4433 50%,#7B68EE 100%);background-size:200% 200%;animation:grain-move 6s ease-in-out infinite alternate;overflow:hidden;border-radius:24px}
+    .signup-grain{position:relative;background:linear-gradient(140deg,#FFBB33 0%,#FF6B35 50%,#7B68EE 100%);background-size:200% 200%;animation:grain-move 6s ease-in-out infinite alternate;overflow:hidden;border-radius:24px}
     @keyframes grain-move{
       0%{background-position:0% 50%}
       50%{background-position:100% 50%}
@@ -325,7 +325,7 @@
 
       <!-- CTA + mobile toggle -->
       <div class="flex items-center gap-2 ml-auto">
-        <a href="#signup" class="bg-orange text-white text-[.8rem] font-semibold px-5 py-2 rounded-xl hover:bg-orange-dk transition-colors">Start building</a>
+        <a href="#signup" class="bg-orange text-ink text-[.8rem] font-semibold px-5 py-2 rounded-xl hover:bg-orange-dk transition-colors">Start building</a>
         <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
           <span class="block w-4.5 h-0.5 bg-white/70 transition-transform" id="ham-1" aria-hidden="true"></span>
           <span class="block w-4.5 h-0.5 bg-white/70 transition-opacity" id="ham-2" aria-hidden="true"></span>
@@ -377,7 +377,7 @@
 
     <!-- CTAs — fade in after subtext -->
     <div id="hero-ctas" class="flex flex-wrap gap-3 justify-center" style="opacity:0;transform:translateY(12px)">
-      <a href="#signup" class="bg-orange text-white font-semibold text-sm px-8 py-4 rounded-xl hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start building</a>
+      <a href="#signup" class="bg-orange text-ink font-semibold text-sm px-8 py-4 rounded-xl hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start building</a>
       <a href="#how" class="border border-white/15 text-white/70 font-semibold text-sm px-8 py-4 rounded-xl hover:border-white/35 hover:text-white transition-all">See how it works</a>
     </div>
 
@@ -491,13 +491,13 @@
       </div>
 
       <!-- Card 2: Cost — spans 5 cols, orange -->
-      <div class="col-span-12 md:col-span-5 bento-card rounded-3xl p-10" style="background:#FF4433;min-height:280px;opacity:0;transform:translateY(40px) scale(.95)">
+      <div class="col-span-12 md:col-span-5 bento-card rounded-3xl p-10" style="background:#FF6B35;min-height:280px;opacity:0;transform:translateY(40px) scale(.95)">
         <div class="flex items-center gap-2 mb-1">
-          <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-white/50">Budget burned</p>
+          <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em]" style="color:rgba(8,0,37,.4)">Budget burned</p>
         </div>
-        <div class="border-t border-dashed border-white/20 mb-6 mt-2"></div>
-        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.85);" data-count="15" data-prefix="$" data-suffix="k">$0k</p>
-        <p class="text-white/70 text-sm leading-relaxed mt-4 max-w-sm">A simple internal tool can cost up to $15k before even going live. With Souped, it's $0 in engineering.</p>
+        <div class="border-t border-dashed mb-6 mt-2" style="border-color:rgba(8,0,37,.15)"></div>
+        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px rgba(8,0,37,.3);" data-count="15" data-prefix="$" data-suffix="k">$0k</p>
+        <p class="text-sm leading-relaxed mt-4 max-w-sm" style="color:rgba(8,0,37,.6)">A simple internal tool can cost up to $15k before even going live. With Souped, it's $0 in engineering.</p>
       </div>
 
       <!-- Card 3: Apps shipped — spans 5 cols, dark -->
@@ -585,7 +585,7 @@
           </div>
 
           <!-- Card 2: Deploy — orange -->
-          <div class="how-card rounded-3xl" style="background:#FF4433;">
+          <div class="how-card rounded-3xl" style="background:#FF6B35;">
             <div class="flex items-center gap-2 mb-1">
               <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-white/45">Step 02</p>
             </div>
@@ -608,7 +608,7 @@
 
           <!-- End phrase -->
           <div class="flex items-center flex-shrink-0 px-10">
-            <p class="font-display font-bold text-[clamp(2rem,4vw,3rem)] whitespace-nowrap" style="background:linear-gradient(90deg,#FFBB33,#FF4433,#7B68EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Your Ideas, Souped up!</p>
+            <p class="font-display font-bold text-[clamp(2rem,4vw,3rem)] whitespace-nowrap" style="background:linear-gradient(90deg,#FFBB33,#FF6B35,#7B68EE);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Your Ideas, Souped up!</p>
           </div>
           <div style="width:60px;flex-shrink:0"></div>
         </div>
@@ -642,7 +642,7 @@
     </div>
     <div class="text-center reveal delay-4">
       <p class="text-ink-muted mb-7">You control shipping, purchases, and alerts.</p>
-      <a href="#signup" class="bg-orange text-white font-semibold text-sm px-8 py-4 rounded-full hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start getting souped!</a>
+      <a href="#signup" class="bg-orange text-ink font-semibold text-sm px-8 py-4 rounded-full hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start getting souped!</a>
     </div>
   </div>
 </section>
@@ -657,12 +657,12 @@
       </h2>
     </div>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <article class="card-glass reveal delay-1"><div class="w-10 h-1 rounded-full mb-5" style="background:#FF4433" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Deploy</h3><p class="text-white/60 text-sm leading-relaxed">Your app, live with database, auth, and custom domain included.</p></article>
+      <article class="card-glass reveal delay-1"><div class="w-10 h-1 rounded-full mb-5" style="background:#FF6B35" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Deploy</h3><p class="text-white/60 text-sm leading-relaxed">Your app, live with database, auth, and custom domain included.</p></article>
       <article class="card-glass reveal delay-2"><div class="w-10 h-1 rounded-full mb-5" style="background:#FFBB33" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Monitor</h3><p class="text-white/60 text-sm leading-relaxed">Detectors track health in production. Issues are caught before users complain.</p></article>
       <article class="card-glass reveal delay-3"><div class="w-10 h-1 rounded-full mb-5" style="background:#7B68EE" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Notify</h3><p class="text-white/60 text-sm leading-relaxed">Your team is instantly notified of completed deployments, health alerts, and feedback.</p></article>
       <article class="card-glass reveal delay-1"><div class="w-10 h-1 rounded-full mb-5" style="background:#FFBB33" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Access</h3><p class="text-white/60 text-sm leading-relaxed">You decide who sees what, whether different members, clients, or users.</p></article>
       <article class="card-glass reveal delay-2"><div class="w-10 h-1 rounded-full mb-5" style="background:#7B68EE" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Organize</h3><p class="text-white/60 text-sm leading-relaxed">A single, intuitive dashboard to track projects, teams, and credentials.</p></article>
-      <article class="card-glass reveal delay-3"><div class="w-10 h-1 rounded-full mb-5" style="background:#FF4433" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">AI Skills</h3><p class="text-white/60 text-sm leading-relaxed">Vetted skills for frontend, backend, design, testing, and security.</p></article>
+      <article class="card-glass reveal delay-3"><div class="w-10 h-1 rounded-full mb-5" style="background:#FF6B35" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">AI Skills</h3><p class="text-white/60 text-sm leading-relaxed">Vetted skills for frontend, backend, design, testing, and security.</p></article>
     </div>
   </div>
 </section>
@@ -832,7 +832,7 @@
     </div>
 
     <!-- Right — mini product demo -->
-    <div class="hidden md:flex flex-col items-center justify-center relative overflow-hidden p-8" style="background:linear-gradient(140deg,#FFBB33 0%,#FF4433 50%,#7B68EE 100%);background-size:200% 200%;animation:grain-move 6s ease-in-out infinite alternate" aria-hidden="true">
+    <div class="hidden md:flex flex-col items-center justify-center relative overflow-hidden p-8" style="background:linear-gradient(140deg,#FFBB33 0%,#FF6B35 50%,#7B68EE 100%);background-size:200% 200%;animation:grain-move 6s ease-in-out infinite alternate" aria-hidden="true">
       <!-- Mini terminal card -->
       <div class="w-full max-w-sm rounded-xl overflow-hidden shadow-2xl shadow-black/30 relative z-10" style="background:rgba(8,0,37,.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08)">
         <!-- Bar -->
