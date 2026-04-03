@@ -132,12 +132,12 @@
       100%{background-position:5% 70%,60% 20%,85% 10%,95% 85%}
     }
     .mesh-orb{
-      position:absolute;border-radius:50%;filter:blur(100px);opacity:.22;
-      animation:orb-float 10s ease-in-out infinite alternate;
+      position:absolute;border-radius:50%;filter:blur(90px);opacity:.28;
+      animation:orb-float 8s ease-in-out infinite alternate;
     }
-    .mesh-orb-1{width:500px;height:500px;background:#FF4433;top:-10%;right:-5%;animation-delay:0s}
-    .mesh-orb-2{width:450px;height:450px;background:#7B68EE;bottom:-15%;left:-5%;animation-delay:-5s;opacity:.2}
-    .mesh-orb-3{width:350px;height:350px;background:#FFBB33;top:30%;left:30%;animation-delay:-3s;opacity:.12}
+    .mesh-orb-1{width:550px;height:550px;background:#FF4433;top:-10%;right:-5%;animation-delay:0s;animation-duration:7s}
+    .mesh-orb-2{width:500px;height:500px;background:#7B68EE;bottom:-15%;left:-5%;animation-delay:-3s;opacity:.25;animation-duration:9s}
+    .mesh-orb-3{width:400px;height:400px;background:#FFBB33;top:30%;left:30%;animation-delay:-5s;opacity:.18;animation-duration:11s}
 
     /* Hero CSS entrance — no JS dependency */
     .hero-anim{
@@ -154,7 +154,10 @@
     }
     @keyframes orb-float{
       0%{transform:translate(0,0) scale(1)}
-      100%{transform:translate(30px,-40px) scale(1.1)}
+      25%{transform:translate(80px,-60px) scale(1.15)}
+      50%{transform:translate(-40px,70px) scale(.9)}
+      75%{transform:translate(60px,40px) scale(1.1)}
+      100%{transform:translate(-70px,-80px) scale(1.05)}
     }
 
     /* ═══ SCROLL REVEAL (Exergy3 style) ═══ */
@@ -197,7 +200,7 @@
     .prompt-line{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px}
     .prompt-icon{width:28px;height:28px;background:#FF4433;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;margin-top:2px}
     .prompt-text{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.8);line-height:1.6}
-    .cursor{display:inline-block;width:2px;height:14px;background:#FF4433;margin-left:2px;vertical-align:middle;animation:blink 1s step-end infinite}
+    .cursor{display:inline-block;width:3px;height:1em;background:#FF4433;vertical-align:baseline;margin-left:2px;vertical-align:middle;animation:blink 1s step-end infinite}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
     .block-chip{position:absolute;border-radius:10px;display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:.72rem;font-weight:600;white-space:nowrap;border:1px solid rgba(255,255,255,.08)}
     .chip-db{background:#1E3A2F;color:#4ADE80;top:70px;left:24px}
@@ -324,103 +327,31 @@
   <div class="mesh-orb mesh-orb-2" aria-hidden="true"></div>
   <div class="mesh-orb mesh-orb-3" aria-hidden="true"></div>
 
-  <div class="relative z-10 max-w-6xl mx-auto w-full flex-1 flex items-center">
+  <div class="relative z-10 max-w-5xl mx-auto w-full flex-1 flex flex-col justify-center text-center">
 
-    <!-- Split: 2 columns on desktop, stacked on mobile -->
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
-
-      <!-- LEFT — Text -->
-      <div>
-        <div class="hero-anim mb-5" style="animation-delay:.1s">
-          <span class="pill text-orange border-orange/40">✦ Introducing Conversational Production</span>
-        </div>
-        <h1 id="hero-h1" class="hero-anim font-display font-extrabold text-[clamp(2.6rem,5.5vw,4.2rem)] leading-[0.95] tracking-tight text-white mb-5" style="animation-delay:.25s">
-          Describing it<br><em class="not-italic text-orange">is</em> shipping it.
-        </h1>
-        <p class="hero-anim text-base md:text-lg text-white/50 max-w-md leading-relaxed mb-8" style="animation-delay:.42s">
-          Souped is the first platform where describing an idea and having it live in production are one and the same.
-        </p>
-        <div class="hero-anim flex flex-wrap gap-3" style="animation-delay:.56s">
-          <a href="#signup" class="bg-orange text-white font-semibold text-sm px-7 py-3.5 rounded-xl hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start building →</a>
-          <a href="#assembly" class="border border-white/15 text-white/70 font-semibold text-sm px-7 py-3.5 rounded-xl hover:border-white/35 hover:text-white transition-all">See how it works</a>
-        </div>
-      </div>
-
-      <!-- RIGHT — Product showcase (aspirational) -->
-      <div class="hero-anim" style="animation-delay:.6s;animation-fill-mode:both" aria-hidden="true" role="presentation">
-        <div style="animation:hero-float 5s ease-in-out infinite alternate">
-        <div class="space-y-3">
-
-          <!-- Card 1 — featured product -->
-          <div class="hero-anim rounded-2xl overflow-hidden border border-white/10 shadow-xl shadow-black/30" style="background:rgba(13,13,43,.55);backdrop-filter:blur(16px);animation-delay:.85s">
-            <div class="h-28 relative overflow-hidden" style="background:linear-gradient(135deg,#FFBB33,#FF4433)">
-              <div class="absolute inset-0 flex items-end px-5 pb-4">
-                <div class="flex items-center gap-3">
-                  <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center shadow-lg"><span class="text-lg">💬</span></div>
-                  <div>
-                    <p class="font-display font-bold text-sm text-white drop-shadow">Feedback Hub</p>
-                    <p class="text-[.65rem] text-white/70">Collect and manage team feedback</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="px-5 py-3.5 flex items-center justify-between">
-              <div class="flex items-center gap-1">
-                <div class="flex -space-x-1.5">
-                  <div class="w-5 h-5 rounded-full bg-amber border-2 border-[#14142E]"></div>
-                  <div class="w-5 h-5 rounded-full bg-violet border-2 border-[#14142E]"></div>
-                  <div class="w-5 h-5 rounded-full bg-orange border-2 border-[#14142E]"></div>
-                </div>
-                <span class="text-[.65rem] text-white/40 ml-2">847 people use this</span>
-              </div>
-              <span class="text-[.6rem] font-semibold text-green-400 bg-green-500/15 px-2 py-0.5 rounded-full border border-green-500/15">Live</span>
-            </div>
-          </div>
-
-          <!-- Cards 2 & 3 — side by side -->
-          <div class="grid grid-cols-2 gap-3">
-            <div class="hero-anim rounded-2xl overflow-hidden border border-white/10 shadow-lg shadow-black/20" style="background:rgba(13,13,43,.55);backdrop-filter:blur(16px);animation-delay:1.05s">
-              <div class="h-20 relative overflow-hidden" style="background:linear-gradient(135deg,#7B68EE,#5B48CE)">
-                <div class="absolute inset-0 flex items-end px-4 pb-3">
-                  <div class="flex items-center gap-2">
-                    <div class="w-7 h-7 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center"><span class="text-xs">🎯</span></div>
-                    <p class="font-display font-bold text-[.72rem] text-white drop-shadow">Goal Tracker</p>
-                  </div>
-                </div>
-              </div>
-              <div class="px-4 py-2.5 flex items-center justify-between">
-                <span class="text-[.6rem] text-white/35">612 users</span>
-                <span class="text-[.55rem] font-semibold text-green-400">Live</span>
-              </div>
-            </div>
-            <div class="hero-anim rounded-2xl overflow-hidden border border-white/10 shadow-lg shadow-black/20" style="background:rgba(13,13,43,.55);backdrop-filter:blur(16px);animation-delay:1.2s">
-              <div class="h-20 relative overflow-hidden" style="background:linear-gradient(135deg,#FF4433,#CC2222)">
-                <div class="absolute inset-0 flex items-end px-4 pb-3">
-                  <div class="flex items-center gap-2">
-                    <div class="w-7 h-7 rounded-lg bg-white/20 backdrop-blur flex items-center justify-center"><span class="text-xs">📋</span></div>
-                    <p class="font-display font-bold text-[.72rem] text-white drop-shadow">Client Portal</p>
-                  </div>
-                </div>
-              </div>
-              <div class="px-4 py-2.5 flex items-center justify-between">
-                <span class="text-[.6rem] text-white/35">388 users</span>
-                <span class="text-[.55rem] font-semibold text-green-400">Live</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom tagline -->
-          <div class="hero-anim text-center pt-1" style="animation-delay:1.35s">
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[.7rem] font-medium text-white/40" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-400" style="animation:pulse-dot 1.5s ease-in-out infinite"></span>
-              All built by describing what they wanted
-            </span>
-          </div>
-
-        </div>
-      </div></div>
-
+    <!-- Pill -->
+    <div class="hero-anim mb-8" style="animation-delay:.1s">
+      <span class="pill text-orange border-orange/40">Introducing Conversational Production</span>
     </div>
+
+    <!-- The "prompt" — H1 types itself -->
+    <div class="mb-8">
+      <h1 id="hero-h1" class="font-display font-extrabold text-[clamp(3rem,7vw,5.5rem)] leading-[0.93] tracking-tight text-white" aria-label="Describing it is shipping it.">
+        <span id="hero-typed"></span><span class="cursor" id="hero-cursor"></span>
+      </h1>
+    </div>
+
+    <!-- Subtext — fades in after typing -->
+    <p id="hero-sub" class="text-lg md:text-xl text-white/50 max-w-xl mx-auto leading-relaxed mb-10" style="opacity:0;transform:translateY(12px)">
+      Souped is the first platform where describing an idea and having it live in production are one and the same.
+    </p>
+
+    <!-- CTAs — fade in after subtext -->
+    <div id="hero-ctas" class="flex flex-wrap gap-3 justify-center" style="opacity:0;transform:translateY(12px)">
+      <a href="#signup" class="bg-orange text-white font-semibold text-sm px-8 py-4 rounded-xl hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start building →</a>
+      <a href="#how" class="border border-white/15 text-white/70 font-semibold text-sm px-8 py-4 rounded-xl hover:border-white/35 hover:text-white transition-all">See how it works</a>
+    </div>
+
   </div>
 
   <!-- Marquee -->
@@ -840,7 +771,77 @@ gsap.registerPlugin(ScrollTrigger);
 /* ═══ REDUCED MOTION CHECK ═══ */
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-/* ═══ (Hero is now static product showcase — no JS needed) ═══ */
+/* ═══ HERO TYPEWRITER — H1 types itself like a prompt ═══ */
+(function() {
+  const el = document.getElementById('hero-typed');
+  const cursorEl = document.getElementById('hero-cursor');
+  const subEl = document.getElementById('hero-sub');
+  const ctaEl = document.getElementById('hero-ctas');
+  if (!el) return;
+
+  // The text with a marker for the orange "is" and a pause after "Describing it"
+  const parts = [
+    { text: 'Describing it', color: 'white' },
+    { text: '', color: 'pause', delay: 900 },
+    { text: ' ', color: 'white' },
+    { text: 'is', color: 'orange' },
+    { text: ' shipping it.', color: 'white' }
+  ];
+
+  if (prefersReduced) {
+    el.innerHTML = 'Describing it <em class="not-italic text-orange">is</em> shipping it.';
+    if (cursorEl) cursorEl.style.display = 'none';
+    if (subEl) { subEl.style.opacity = '1'; subEl.style.transform = 'none'; }
+    if (ctaEl) { ctaEl.style.opacity = '1'; ctaEl.style.transform = 'none'; }
+    return;
+  }
+
+  let partIdx = 0, charIdx = 0;
+  const speed = 55;
+  const startDelay = 600;
+
+  function type() {
+    if (partIdx >= parts.length) {
+      // Done typing — reveal subtext + CTAs
+      setTimeout(() => {
+        if (subEl) { subEl.style.transition = 'opacity .5s ease, transform .5s ease'; subEl.style.opacity = '1'; subEl.style.transform = 'translateY(0)'; }
+        setTimeout(() => {
+          if (ctaEl) { ctaEl.style.transition = 'opacity .5s ease, transform .5s ease'; ctaEl.style.opacity = '1'; ctaEl.style.transform = 'translateY(0)'; }
+        }, 250);
+        // Hide cursor after a beat
+        setTimeout(() => { if (cursorEl) cursorEl.style.opacity = '0'; }, 1500);
+      }, 300);
+      return;
+    }
+
+    const part = parts[partIdx];
+    if (part.color === 'pause') {
+      partIdx++;
+      charIdx = 0;
+      setTimeout(type, part.delay || 800);
+      return;
+    }
+    if (charIdx < part.text.length) {
+      // Get or create the span for this part
+      let span = el.querySelector(`[data-part="${partIdx}"]`);
+      if (!span) {
+        span = document.createElement(part.color === 'orange' ? 'em' : 'span');
+        if (part.color === 'orange') { span.className = 'not-italic text-orange'; }
+        span.dataset.part = partIdx;
+        el.appendChild(span);
+      }
+      span.textContent += part.text[charIdx];
+      charIdx++;
+      setTimeout(type, speed + Math.random() * 25);
+    } else {
+      partIdx++;
+      charIdx = 0;
+      type();
+    }
+  }
+
+  setTimeout(type, startDelay);
+})();
 
 
 /* ═══ SKIP GSAP SCRUB IF REDUCED MOTION ═══ */
