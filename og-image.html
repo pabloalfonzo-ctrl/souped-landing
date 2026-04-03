@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://use.typekit.net/vdd7qlu.css">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -10,16 +11,37 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: linear-gradient(140deg, #FFBB33 0%, #FF6B35 40%, #7B68EE 100%);
+    font-family: neighbor, -apple-system, sans-serif;
+    background: #080025;
     position: relative;
     overflow: hidden;
   }
+  /* Mesh gradient bg — same as hero */
+  .mesh {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 55% at 5% 75%, rgba(60,20,220,.7) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 60% at 25% 30%, rgba(255,187,51,.6) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 70% at 60% 20%, rgba(255,100,20,.55) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 50% at 95% 50%, rgba(180,20,0,.5) 0%, transparent 50%),
+      radial-gradient(ellipse 50% 50% at 80% 90%, rgba(100,0,30,.4) 0%, transparent 50%),
+      #080025;
+  }
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+  }
+  .orb-1 { width: 500px; height: 500px; background: #FF6B35; top: -15%; right: 10%; opacity: .3; }
+  .orb-2 { width: 450px; height: 450px; background: #3314DC; bottom: -20%; left: -5%; opacity: .35; }
+  .orb-3 { width: 350px; height: 350px; background: #FFBB33; top: 25%; left: 20%; opacity: .2; }
   .noise {
     position: absolute;
     inset: 0;
-    opacity: 0.08;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.1;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   }
   .content {
     position: relative;
@@ -28,41 +50,69 @@
     color: white;
   }
   .logo {
-    height: 56px;
-    margin-bottom: 32px;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,.15));
+    height: 48px;
+    margin-bottom: 36px;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,.2));
   }
   h1 {
-    font-size: 64px;
-    font-weight: 800;
+    font-size: 72px;
+    font-weight: 700;
     letter-spacing: -1px;
-    line-height: 1;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 20px rgba(0,0,0,.15);
+    line-height: 0.95;
+    margin-bottom: 24px;
+    font-feature-settings: "ss01" 1, "ss02" 1, "ss03" 1, "ss04" 1, "ss05" 1;
+  }
+  h1 em {
+    font-style: normal;
+    color: #FF6B35;
   }
   p {
-    font-size: 24px;
-    opacity: 0.8;
-    font-weight: 500;
+    font-size: 22px;
+    color: rgba(255,255,255,.5);
+    font-weight: 400;
+    font-family: 'DM Sans', -apple-system, sans-serif;
+  }
+  .pill {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 18px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.06);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.7);
+    z-index: 1;
+    font-family: 'DM Sans', sans-serif;
   }
   .url {
     position: absolute;
-    bottom: 40px;
+    bottom: 36px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 18px;
-    color: rgba(255,255,255,.5);
+    font-size: 16px;
+    color: rgba(255,255,255,.3);
     font-weight: 500;
     z-index: 1;
+    font-family: 'DM Sans', sans-serif;
   }
 </style>
 </head>
 <body>
+  <div class="mesh"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
   <div class="noise"></div>
+  <div class="pill">Introducing Conversational Production</div>
   <div class="content">
     <img src="logo-white.svg" alt="Souped" class="logo">
-    <h1>Describing it is shipping it.</h1>
-    <p>The first Conversational Production platform.</p>
+    <h1>Describing it <em>is</em> shipping it.</h1>
+    <p>The first platform where describing an idea and having it live in production are one and the same.</p>
   </div>
   <div class="url">souped.app</div>
 </body>
