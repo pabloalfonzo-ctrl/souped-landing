@@ -13,11 +13,11 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://souped.app/">
   <meta property="og:title" content="Souped — Describing it is shipping it.">
-  <meta property="og:description" content="The first platform where describing an idea and having it live in production are one and the same.">
+  <meta property="og:description" content="The first platform where describing an idea and having it live in production are one and&nbsp;the same.">
   <meta property="og:image" content="https://souped.app/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Souped — Describing it is shipping it.">
-  <meta name="twitter:description" content="The first platform where describing an idea and having it live in production are one and the same.">
+  <meta name="twitter:description" content="The first platform where describing an idea and having it live in production are one and&nbsp;the same.">
   <meta name="twitter:image" content="https://souped.app/og-image.png">
   <meta name="twitter:url" content="https://souped.app/">
 
@@ -55,7 +55,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Souped","url":"https://souped.app"},{"@type":"SoftwareApplication","name":"Souped","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Conversational Production?","acceptedAnswer":{"@type":"Answer","text":"Conversational Production focuses on describing what you want to build and having it live in production in a single action. It requires no code, deploy pipelines, or infrastructure knowledge."}},{"@type":"Question","name":"Do I need to know how to code to use Conversational Production?","acceptedAnswer":{"@type":"Answer","text":"Nop, you simply describe what you want; Souped builds it, deploys it, and monitors it. The only requirement is an idea."}},{"@type":"Question","name":"What is the Idea Tax?","acceptedAnswer":{"@type":"Answer","text":"The time, money, and permission you pay between having an idea and shipping it — including engineers, estimates, sprints, staging environments, and DevOps. Souped eliminates the Idea Tax entirely."}},{"@type":"Question","name":"How fast can I ship my first app?","acceptedAnswer":{"@type":"Answer","text":"Most Souped users ship in under 90 minutes, and some even in under 30. If your first try takes longer than expected, contact us!"}},{"@type":"Question","name":"Who owns the apps I deploy?","acceptedAnswer":{"@type":"Answer","text":"You do. Souped is the orchestration layer, but since apps deploy to your own Vercel and Supabase accounts, the infrastructure is always yours."}}]}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Souped","url":"https://souped.app"},{"@type":"SoftwareApplication","name":"Souped","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Conversational Production?","acceptedAnswer":{"@type":"Answer","text":"Conversational Production focuses on describing what you want to build and having it live in production in a single action. It requires no code, deploy pipelines, or infrastructure knowledge."}},{"@type":"Question","name":"Do I need to know how to code to use Conversational Production?","acceptedAnswer":{"@type":"Answer","text":"Nop, you simply describe what you want; Souped builds it, deploys it, and monitors it. The only requirement is an idea."}},{"@type":"Question","name":"What is the Idea&nbsp;Tax?","acceptedAnswer":{"@type":"Answer","text":"The time, money, and permission you pay between having an idea and shipping it — including engineers, estimates, sprints, staging environments, and DevOps. Souped eliminates the Idea&nbsp;Tax entirely."}},{"@type":"Question","name":"How fast can I ship my first app?","acceptedAnswer":{"@type":"Answer","text":"Most Souped users ship in under 90 minutes, and some even in under 30. If your first try takes longer than expected, contact us!"}},{"@type":"Question","name":"Who owns the apps I deploy?","acceptedAnswer":{"@type":"Answer","text":"You do. Souped is the orchestration layer, but since apps deploy to your own Vercel and Supabase accounts, the infrastructure is always yours."}}]}]}
   </script>
 
   <style>
@@ -280,13 +280,14 @@
     }
 
     /* ═══ Before / After ═══ */
-    .card-before{background:linear-gradient(135deg,#D94E1F,#AA1A1A);border-radius:20px;padding:36px;color:rgba(255,255,255,.7)}
-    .card-before .head{color:rgba(255,255,255,.45);font-size:.7rem}
-    .card-before li strong{color:rgba(255,255,255,.9)}
-    .card-after{background:#FFBB33;border-radius:20px;padding:36px;color:rgba(8,0,37,.7)}
-    .card-after .head{color:rgba(8,0,37,.4);font-size:.7rem}
-    .card-after li{color:rgba(8,0,37,.8)}
-    .card-after li strong{color:#080025;font-weight:700}
+    .card-before{background:#080025;border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:36px;color:rgba(255,255,255,.45)}
+    .card-before .head{color:rgba(255,255,255,.25);font-size:.7rem}
+    .card-before li strong{color:rgba(255,255,255,.6)}
+    .card-before li .icon-x{color:#FF6B35}
+    .card-after{background:#7B68EE;border-radius:20px;padding:36px;color:rgba(255,255,255,.85)}
+    .card-after .head{color:rgba(255,255,255,.5);font-size:.7rem}
+    .card-after li{color:#fff}
+    .card-after li strong{color:#fff;font-weight:700}
 
     /* ═══ Signup grain ═══ */
     .signup-grain{position:relative;background:linear-gradient(140deg,#FFBB33 0%,#FF6B35 50%,#7B68EE 100%);background-size:200% 200%;animation:grain-move 6s ease-in-out infinite alternate;overflow:hidden}
@@ -373,7 +374,7 @@
 
     <!-- Subtext — fades in after typing -->
     <p id="hero-sub" class="text-lg md:text-xl text-white/50 max-w-xl mx-auto leading-relaxed mb-10" style="opacity:0;transform:translateY(12px)">
-      Souped is the first platform where describing an idea and having it live in production are one and the same.
+      Souped is the first platform where describing an idea and having it live in production are one and&nbsp;the same.
     </p>
 
     <!-- CTAs — fade in after subtext -->
@@ -406,9 +407,8 @@
 </section>
 
 
-<!-- ═══ ASSEMBLY (scroll-driven) ═══ -->
+<!-- ═══ ASSEMBLY (scroll-driven terminal) ═══ -->
 <section id="assembly" class="bg-dark" aria-label="How Souped works — interactive demo">
-  <!-- Screen reader fallback (H2) -->
   <div class="sr-only">
     <h2>How Souped works</h2>
     <ol>
@@ -420,52 +420,78 @@
   </div>
   <div style="height:400vh">
     <div style="position:sticky;top:64px;height:calc(100vh - 64px);display:flex;align-items:center;justify-content:center;overflow:hidden">
+
+      <!-- Step dots -->
       <div class="step-counter" aria-hidden="true">
         <div class="step-dot active" id="sd-0"></div><div class="step-dot" id="sd-1"></div><div class="step-dot" id="sd-2"></div><div class="step-dot" id="sd-3"></div>
       </div>
+
+      <!-- Phase 1: Intro text types itself -->
       <div id="asm-intro" class="absolute inset-0 flex items-center justify-center text-center pointer-events-none z-10 px-8" style="opacity:0">
-        <div>
-          <p class="font-display font-bold text-xs uppercase tracking-[.14em] text-orange mb-3">Watch it happen</p>
-          <h2 class="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-white leading-tight">From description<br>to production</h2>
+        <h2 class="font-display font-extrabold text-[clamp(2.5rem,6vw,4.5rem)] text-white leading-tight">
+          <span id="asm-typed"></span><span class="cursor" id="asm-cursor"></span>
+        </h2>
+      </div>
+
+      <!-- Phase 2-4: Terminal window -->
+      <div id="asm-terminal" class="w-full max-w-2xl mx-4 rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50" style="opacity:0;transform:scale(.88) translateY(30px);background:rgba(8,0,37,.85);backdrop-filter:blur(16px)">
+        <!-- Terminal bar -->
+        <div class="flex items-center gap-3 px-5 py-3 border-b border-white/6">
+          <div class="flex gap-1.5">
+            <div class="w-2.5 h-2.5 rounded-full bg-white/15"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/15"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/15"></div>
+          </div>
+          <div class="flex-1 text-center">
+            <span class="font-mono text-[.65rem] text-white/25">souped</span>
+          </div>
+          <div class="w-12"></div>
+        </div>
+        <!-- Terminal body -->
+        <div class="px-6 py-5 font-mono text-sm leading-relaxed" style="min-height:280px">
+          <!-- User prompt -->
+          <div id="asm-prompt" style="opacity:0">
+            <span class="text-orange">❯</span>
+            <span class="text-white/80" id="asm-user-text"></span><span class="cursor" id="asm-prompt-cursor"></span>
+          </div>
+          <!-- Enter feedback -->
+          <div id="asm-enter" class="mt-1 mb-4" style="opacity:0">
+            <span class="text-white/20 text-xs">↵ enter</span>
+          </div>
+          <!-- Process lines -->
+          <div id="asm-line-1" class="flex items-center gap-3 mt-3" style="opacity:0">
+            <span class="text-white/40">→</span>
+            <span class="text-white/60 flex-1">Setting up database...</span>
+            <span class="text-green-400 font-bold" id="asm-check-1" style="opacity:0">✓</span>
+          </div>
+          <div id="asm-line-2" class="flex items-center gap-3 mt-2" style="opacity:0">
+            <span class="text-white/40">→</span>
+            <span class="text-white/60 flex-1">Configuring authentication...</span>
+            <span class="text-green-400 font-bold" id="asm-check-2" style="opacity:0">✓</span>
+          </div>
+          <div id="asm-line-3" class="flex items-center gap-3 mt-2" style="opacity:0">
+            <span class="text-white/40">→</span>
+            <span class="text-white/60 flex-1">Assigning domain...</span>
+            <span class="text-green-400 font-bold" id="asm-check-3" style="opacity:0">✓</span>
+          </div>
+          <div id="asm-line-4" class="flex items-center gap-3 mt-2" style="opacity:0">
+            <span class="text-white/40">→</span>
+            <span class="text-white/60 flex-1">Deploying to production...</span>
+            <span class="text-green-400 font-bold" id="asm-check-4" style="opacity:0">✓</span>
+          </div>
+          <!-- Progress bar -->
+          <div class="progress-wrap mt-4" id="asm-progress" style="opacity:0">
+            <div class="progress-bar" id="asm-prog-bar"></div>
+          </div>
+          <!-- Final result -->
+          <div id="asm-result" class="mt-5 pt-4 border-t border-white/8" style="opacity:0">
+            <span class="text-green-400 font-bold">✓</span>
+            <span class="text-white/80"> Live at </span>
+            <span class="text-orange font-semibold">feedback.myteam.app</span>
+          </div>
         </div>
       </div>
-      <div id="app-window" class="app-window" style="opacity:0;transform:scale(.85) translateY(40px)">
-        <div class="window-bar"><div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div><div class="window-url" id="win-url">souped.app</div><div class="live-badge" id="live-badge"><div class="live-dot"></div> Live</div></div>
-        <div class="window-body">
-          <div id="step-describe" style="opacity:0">
-            <div class="prompt-line"><div class="prompt-text">Build me a feedback tool for my team.<br>Users log in, submit feedback, and I<br>can review it from a dashboard.<span class="cursor"></span></div></div>
-          </div>
-          <div id="step-processing" style="opacity:0;position:absolute;top:24px;left:24px;right:24px">
-            <p class="font-mono text-xs text-orange/70 mb-3">→ Souping your idea...</p>
-            <div class="progress-wrap"><div class="progress-bar" id="prog-bar"></div></div>
-            <div class="status-row">
-              <span class="status-pill sp-green" id="sp1">✓ Schema ready</span>
-              <span class="status-pill sp-purple" id="sp2">✓ Auth configured</span>
-              <span class="status-pill sp-blue" id="sp3">✓ Domain assigned</span>
-              <span class="status-pill sp-orange" id="sp4">✓ Deploying</span>
-            </div>
-          </div>
-          <div id="step-live" style="opacity:0;position:absolute;top:0;left:0;right:0;bottom:0">
-            <div style="padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between">
-              <span class="font-body font-bold text-sm text-white">Feedback Dashboard</span>
-              <span style="font-size:.65rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace">3 new items</span>
-            </div>
-            <div style="padding:16px 24px;display:flex;flex-direction:column;gap:8px">
-              <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.06)"><p style="font-size:.72rem;color:rgba(255,255,255,.7);margin-bottom:4px">"The search is really fast now 🔥"</p><p style="font-size:.62rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace">maria@team.co · 2m ago</p></div>
-              <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.06)"><p style="font-size:.72rem;color:rgba(255,255,255,.7);margin-bottom:4px">"Export to CSV would be great"</p><p style="font-size:.62rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace">carlos@team.co · 5m ago</p></div>
-              <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.06)"><p style="font-size:.72rem;color:rgba(255,255,255,.7);margin-bottom:4px">"Works perfectly on mobile 👌"</p><p style="font-size:.62rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace">ana@team.co · 12m ago</p></div>
-            </div>
-          </div>
-          <div class="block-chip chip-db" id="chip-db" style="opacity:0;transform:translate(-80px,40px)"><span>🗄️</span> Database</div>
-          <div class="block-chip chip-auth" id="chip-auth" style="opacity:0;transform:translate(80px,40px)"><span>🔐</span> Auth</div>
-          <div class="block-chip chip-domain" id="chip-domain" style="opacity:0;transform:translate(-80px,-40px)"><span>🌐</span> Domain</div>
-          <div class="block-chip chip-deploy" id="chip-deploy" style="opacity:0;transform:translate(80px,-40px)"><span>🚀</span> Deploy</div>
-        </div>
-      </div>
-      <div class="float-label" id="fl1" style="top:20%;left:5%;transform:rotate(-4deg)">no engineers</div>
-      <div class="float-label" id="fl2" style="top:25%;right:6%;transform:rotate(3deg)">no pipelines</div>
-      <div class="float-label" id="fl3" style="bottom:22%;left:7%;transform:rotate(2deg)">no DevOps</div>
-      <div class="float-label" id="fl4" style="bottom:20%;right:5%;transform:rotate(-3deg)">just describe it</div>
+
     </div>
   </div>
 </section>
@@ -475,7 +501,7 @@
 <section id="stats" class="bg-cream py-32 px-6" aria-label="Souped by the numbers">
   <div class="max-w-[1440px] mx-auto">
     <h2 class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.2rem)] leading-tight text-ink mb-14 text-center">
-      The true cost of<br class="md:hidden"> the <span class="text-orange">Idea Tax</span>
+      The true cost of<br class="md:hidden"> the <span class="text-orange">Idea&nbsp;Tax</span>
     </h2>
 
     <!-- Bento grid -->
@@ -518,7 +544,7 @@
         </div>
         <div class="border-t border-dashed border-ink/12 mb-6 mt-2"></div>
         <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px #080025;" data-count="90" data-prefix="< " data-suffix="m">< 0m</p>
-        <p class="text-ink/50 text-sm leading-relaxed mt-4 max-w-sm">Most users ship their first app in under 90 minutes. Some in under 30. No engineers, no pipelines, no permission needed.</p>
+        <p class="text-ink/50 text-sm leading-relaxed mt-4 max-w-sm">Most users ship their first app in under 90&nbsp;minutes. Some in under 30. No engineers, no pipelines, no permission needed.</p>
       </div>
 
     </div>
@@ -531,20 +557,20 @@
   <div class="max-w-[1440px] mx-auto">
     <div class="mb-16 text-center">
       <h2 id="problem-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-ink mb-5">
-        You've been paying<br>the <span class="text-orange">Idea Tax</span>
+        You've been paying<br>the <span class="text-orange">Idea&nbsp;Tax</span>
       </h2>
       <p class="reveal delay-1 text-lg text-ink-muted leading-relaxed max-w-xl mx-auto">
-        Every idea you've ever had came with an invisible bill on time, money, pipelines, and meetings. At Souped, we call that bill the Idea Tax, and until now, everyone paid it.
+        Every idea you've ever had came with an invisible bill on time, money, pipelines, and meetings. At Souped, we call that bill the Idea&nbsp;Tax, and until now, everyone paid&nbsp;it.
       </p>
     </div>
     <div class="grid md:grid-cols-2 gap-5">
       <div class="card-before reveal-left" aria-label="Before Souped">
         <h3 class="head font-body font-bold uppercase tracking-[.12em] mb-7">Before Souped</h3>
         <ul class="space-y-5">
-          <li class="flex gap-3.5"><span class="text-red-400 mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Time.</strong> Your idea sat in a backlog while other priorities came first.</span></li>
-          <li class="flex gap-3.5"><span class="text-red-400 mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Budget.</strong> A simple tool could cost up to $15k before even being live.</span></li>
-          <li class="flex gap-3.5"><span class="text-red-400 mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Permission.</strong> You needed others' calendars, approval, and capacity.</span></li>
-          <li class="flex gap-3.5"><span class="text-red-400 mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Gap.</strong> All the steps were a full-time job, discouraging your idea.</span></li>
+          <li class="flex gap-3.5"><span class="icon-x text-orange mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Time.</strong> Your idea sat in a backlog while other priorities came first.</span></li>
+          <li class="flex gap-3.5"><span class="icon-x text-orange mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Budget.</strong> A simple tool could cost up to $15k before even being live.</span></li>
+          <li class="flex gap-3.5"><span class="icon-x text-orange mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Permission.</strong> You needed others' calendars, approval, and capacity.</span></li>
+          <li class="flex gap-3.5"><span class="icon-x text-orange mt-0.5 flex-shrink-0 font-bold">✕</span><span><strong>Gap.</strong> All the steps were a full-time job, discouraging your idea.</span></li>
         </ul>
       </div>
       <div class="card-after reveal-right" aria-label="With Souped">
@@ -568,7 +594,7 @@
       <div class="max-w-[1440px] mx-auto w-full mb-10">
         <p class="reveal font-display font-bold text-xs uppercase tracking-[.12em] text-orange mb-4">Three steps. That's it.</p>
         <h2 id="how-h2" class="reveal delay-1 font-display font-extrabold text-[clamp(1.5rem,3.2vw,2.2rem)] leading-snug text-white">
-          Souping is what happens after<br>you describe what you want, bringing<br>your ideas to life in under 90 minutes.
+          Souping is what happens after<br>you describe what you want, bringing<br>your ideas to life in under 90&nbsp;minutes.
         </h2>
       </div>
       <div class="overflow-hidden">
@@ -582,7 +608,7 @@
             <div class="border-t border-dashed border-ink/15 mb-5 mt-2"></div>
             <p class="font-display font-extrabold text-[clamp(4rem,8vw,6rem)] leading-[0.85] tracking-tight mb-4" style="color:transparent;-webkit-text-stroke:2px #080025;">01</p>
             <h3 class="font-display font-extrabold text-3xl text-ink mb-3">Describe</h3>
-            <p class="text-ink/55 leading-relaxed text-base">Write what you want to build. Just describe it, and we'll handle the solution.</p>
+            <p class="text-ink/55 leading-relaxed text-base">Write what you want to build. Just describe it, and we'll handle the&nbsp;solution.</p>
           </div>
 
           <!-- Card 2: Deploy — orange (dark text for contrast) -->
@@ -593,7 +619,7 @@
             <div class="border-t border-dashed mb-5 mt-2" style="border-color:rgba(8,0,37,.15)"></div>
             <p class="font-display font-extrabold text-[clamp(4rem,8vw,6rem)] leading-[0.85] tracking-tight mb-4" style="color:transparent;-webkit-text-stroke:2px rgba(8,0,37,.3);">02</p>
             <h3 class="font-body font-bold text-3xl mb-3" style="color:#080025">Deploy</h3>
-            <p class="leading-relaxed text-base" style="color:rgba(8,0,37,.6)">Your product goes live with a database, auth, environment variables, and a real URL.</p>
+            <p class="leading-relaxed text-base" style="color:rgba(8,0,37,.6)">Your product goes live with a database, auth, environment variables, and a real&nbsp;URL.</p>
           </div>
 
           <!-- Card 3: Monitor — purple -->
@@ -624,7 +650,7 @@
   <div class="max-w-[1440px] mx-auto">
     <div class="mb-14">
       <h2 id="who-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-ink text-center">
-        Nothing will hold<br>you back anymore
+        Nothing will hold<br>you back&nbsp;anymore
       </h2>
     </div>
     <div class="grid md:grid-cols-3 gap-5 mb-10">
@@ -642,7 +668,7 @@
       </article>
     </div>
     <div class="text-center reveal delay-4">
-      <p class="text-ink-muted mb-7">You control shipping, purchases, and alerts.</p>
+      <p class="text-ink-muted mb-7">You control shipping, purchases, and&nbsp;alerts.</p>
       <a href="#signup" class="bg-orange text-ink font-semibold text-sm px-8 py-4 rounded-full hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start getting souped!</a>
     </div>
   </div>
@@ -654,7 +680,7 @@
   <div class="max-w-[1440px] mx-auto">
     <div class="mb-14">
       <h2 id="feat-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-white text-center">
-        Cut the gap between<br>building and shipping
+        Cut the gap between<br>ideating and&nbsp;shipping
       </h2>
     </div>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -708,8 +734,8 @@
         <div class="faq-body" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2"><div><p class="px-6 pb-6 text-white/60 leading-relaxed text-sm md:text-base">Nop, you simply describe what you want; Souped builds it, deploys it, and monitors it. The only requirement is an idea.</p></div></div>
       </li>
       <li class="faq-item reveal delay-3 rounded-2xl border border-white/10 overflow-hidden" data-open="false" style="background:rgba(255,255,255,.03)">
-        <button id="faq-btn-3" class="w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="faq-panel-3"><span class="font-body font-semibold text-base md:text-lg text-white">What is the Idea Tax?</span><span class="faq-icon text-orange text-2xl flex-shrink-0" aria-hidden="true">+</span></button>
-        <div class="faq-body" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3"><div><p class="px-6 pb-6 text-white/60 leading-relaxed text-sm md:text-base">The time, money, and permission you pay between having an idea and shipping it — including engineers, estimates, sprints, staging environments, and DevOps. Souped eliminates the Idea Tax entirely.</p></div></div>
+        <button id="faq-btn-3" class="w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="faq-panel-3"><span class="font-body font-semibold text-base md:text-lg text-white">What is the Idea&nbsp;Tax?</span><span class="faq-icon text-orange text-2xl flex-shrink-0" aria-hidden="true">+</span></button>
+        <div class="faq-body" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3"><div><p class="px-6 pb-6 text-white/60 leading-relaxed text-sm md:text-base">The time, money, and permission you pay between having an idea and shipping it — including engineers, estimates, sprints, staging environments, and DevOps. Souped eliminates the Idea&nbsp;Tax entirely.</p></div></div>
       </li>
       <li class="faq-item reveal delay-4 rounded-2xl border border-white/10 overflow-hidden" data-open="false" style="background:rgba(255,255,255,.03)">
         <button id="faq-btn-4" class="w-full flex items-center justify-between gap-4 p-6 text-left" aria-expanded="false" aria-controls="faq-panel-4"><span class="font-body font-semibold text-base md:text-lg text-white">How fast can I ship my first app?</span><span class="faq-icon text-orange text-2xl flex-shrink-0" aria-hidden="true">+</span></button>
@@ -731,8 +757,8 @@
       <div class="relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <!-- Left — text -->
         <div>
-          <h2 id="signup-h2" class="font-display font-extrabold text-[clamp(2rem,4.5vw,3.2rem)] text-white leading-tight mb-4">Your idea is one description away.</h2>
-          <p class="text-white/65 text-base leading-relaxed max-w-sm">No credit card. No engineer. No pipeline. Just describe what you want and watch it ship.</p>
+          <h2 id="signup-h2" class="font-display font-extrabold text-[clamp(2rem,4.5vw,3.2rem)] text-white leading-tight mb-4">Your idea is one description&nbsp;away.</h2>
+          <p class="text-white/65 text-base leading-relaxed max-w-sm">No credit card. No engineer. No pipeline. Just describe what you want and watch it&nbsp;ship.</p>
         </div>
         <!-- Right — form -->
         <div>
@@ -951,8 +977,13 @@ if (prefersReduced) {
   // Make all animated elements visible instantly
   document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => el.classList.add('is-visible'));
   document.querySelectorAll('.bento-card').forEach(el => { el.style.opacity='1'; el.style.transform='none'; });
-  document.querySelectorAll('#asm-intro,#app-window,#step-describe,#step-processing,#step-live,#live-badge,.block-chip,.float-label,.status-pill').forEach(el => { el.style.opacity='1'; el.style.transform='none'; });
-  // how-pill removed
+  document.querySelectorAll('#asm-intro,#asm-terminal,#asm-prompt,#asm-enter,#asm-progress,#asm-result,[id^="asm-line"],[id^="asm-check"]').forEach(el => { el.style.opacity='1'; el.style.transform='none'; });
+  const asmTypedR = document.getElementById('asm-typed');
+  if (asmTypedR) asmTypedR.textContent = 'From description to production.';
+  const asmUserR = document.getElementById('asm-user-text');
+  if (asmUserR) asmUserR.textContent = 'Build me a feedback tool for my team.';
+  const asmProgR = document.getElementById('asm-prog-bar');
+  if (asmProgR) asmProgR.style.width = '100%';
   // Set bento numbers to final values
   document.querySelectorAll('.bento-num').forEach(el => {
     const prefix = el.dataset.prefix || '';
@@ -974,42 +1005,68 @@ const revealObs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObs.observe(el));
 
 
-/* ═══ ASSEMBLY (GSAP scrub) ═══ */
+/* ═══ ASSEMBLY (GSAP scrub — terminal style) ═══ */
 if (!prefersReduced) {
+
+// Intro typewriter text
+const asmText = 'From description to production.';
+const asmTypedEl = document.getElementById('asm-typed');
+let asmCharIdx = 0;
+
 const asmTl = gsap.timeline({
   scrollTrigger: {
     trigger:'#assembly', start:'top top', end:'bottom bottom', scrub:1.2,
     onUpdate(self) {
       const p=self.progress, s=p<.25?0:p<.5?1:p<.75?2:3;
       document.querySelectorAll('.step-dot').forEach((d,i)=>d.classList.toggle('active',i===s));
+      // Typewriter for intro based on scroll progress (0-0.15)
+      if (asmTypedEl && p < 0.18) {
+        const charCount = Math.floor((p / 0.15) * asmText.length);
+        if (charCount !== asmCharIdx) {
+          asmCharIdx = charCount;
+          asmTypedEl.textContent = asmText.substring(0, Math.min(charCount, asmText.length));
+        }
+      }
     }
   }
 });
+
+// Phase 1: Intro types in (handled by onUpdate above)
 asmTl
-  .fromTo('#asm-intro',{opacity:0,y:30},{opacity:1,y:0,duration:.5},0)
-  .fromTo('#app-window',{opacity:0,scale:.82,y:50},{opacity:1,scale:1,y:0,duration:.6,ease:'back.out(1.4)'},.12)
-  .to('#asm-intro',{opacity:0,y:-20,duration:.3},.22)
-  .fromTo('#step-describe',{opacity:0},{opacity:1,duration:.25},.32)
-  .fromTo('#chip-db',{opacity:0,x:-80,y:40},{opacity:1,x:0,y:0,duration:.4,ease:'power3.out'},.44)
-  .fromTo('#chip-auth',{opacity:0,x:80,y:40},{opacity:1,x:0,y:0,duration:.4,ease:'power3.out'},.50)
-  .fromTo('#chip-domain',{opacity:0,x:-80,y:-40},{opacity:1,x:0,y:0,duration:.4,ease:'power3.out'},.56)
-  .fromTo('#chip-deploy',{opacity:0,x:80,y:-40},{opacity:1,x:0,y:0,duration:.4,ease:'power3.out'},.62)
-  .to('#step-describe',{opacity:0,duration:.2},.60)
-  .fromTo('#step-processing',{opacity:0},{opacity:1,duration:.25},.65)
-  .fromTo('#prog-bar',{width:'0%'},{width:'100%',duration:.35,ease:'power1.inOut'},.67)
-  .fromTo('#sp1',{opacity:0,y:6},{opacity:1,y:0,duration:.15},.70)
-  .fromTo('#sp2',{opacity:0,y:6},{opacity:1,y:0,duration:.15},.73)
-  .fromTo('#sp3',{opacity:0,y:6},{opacity:1,y:0,duration:.15},.76)
-  .fromTo('#sp4',{opacity:0,y:6},{opacity:1,y:0,duration:.15},.79)
-  .to(['#chip-db','#chip-auth','#chip-domain','#chip-deploy'],{opacity:0,scale:.7,duration:.2},.82)
-  .to('#step-processing',{opacity:0,duration:.2},.82)
-  .fromTo('#step-live',{opacity:0},{opacity:1,duration:.3},.85)
-  .fromTo('#live-badge',{opacity:0,y:8},{opacity:1,y:0,duration:.25},.88)
-  .fromTo('#fl1',{opacity:0,x:-10},{opacity:1,x:0,duration:.3},.87)
-  .fromTo('#fl2',{opacity:0,x:10},{opacity:1,x:0,duration:.3},.89)
-  .fromTo('#fl3',{opacity:0,x:-10},{opacity:1,x:0,duration:.3},.91)
-  .fromTo('#fl4',{opacity:0,x:10},{opacity:1,x:0,duration:.3},.93)
-  .call(()=>{document.getElementById('win-url').textContent='feedback.myteam.app'},[],.86);
+  .fromTo('#asm-intro', {opacity:0}, {opacity:1, duration:.3}, 0)
+
+// Phase 2: Intro fades, terminal appears
+  .to('#asm-intro', {opacity:0, y:-20, duration:.2}, .18)
+  .fromTo('#asm-terminal', {opacity:0, scale:.88, y:30}, {opacity:1, scale:1, y:0, duration:.5, ease:'back.out(1.3)'}, .22)
+
+// Phase 3: User types prompt
+  .fromTo('#asm-prompt', {opacity:0}, {opacity:1, duration:.15}, .30)
+  .call(() => {
+    const el = document.getElementById('asm-user-text');
+    if (el) el.textContent = 'Build me a feedback tool for my team.';
+  }, [], .30)
+  .fromTo('#asm-enter', {opacity:0}, {opacity:1, duration:.1}, .38)
+
+// Phase 4: Process lines appear one by one with checks
+  .fromTo('#asm-progress', {opacity:0}, {opacity:1, duration:.1}, .40)
+  .fromTo('#asm-prog-bar', {width:'0%'}, {width:'25%', duration:.08}, .42)
+  .fromTo('#asm-line-1', {opacity:0, x:-10}, {opacity:1, x:0, duration:.1}, .42)
+  .fromTo('#asm-check-1', {opacity:0}, {opacity:1, duration:.08}, .48)
+  .to('#asm-prog-bar', {width:'50%', duration:.08}, .50)
+  .fromTo('#asm-line-2', {opacity:0, x:-10}, {opacity:1, x:0, duration:.1}, .50)
+  .fromTo('#asm-check-2', {opacity:0}, {opacity:1, duration:.08}, .56)
+  .to('#asm-prog-bar', {width:'75%', duration:.08}, .58)
+  .fromTo('#asm-line-3', {opacity:0, x:-10}, {opacity:1, x:0, duration:.1}, .58)
+  .fromTo('#asm-check-3', {opacity:0}, {opacity:1, duration:.08}, .64)
+  .to('#asm-prog-bar', {width:'100%', duration:.08}, .66)
+  .fromTo('#asm-line-4', {opacity:0, x:-10}, {opacity:1, x:0, duration:.1}, .66)
+  .fromTo('#asm-check-4', {opacity:0}, {opacity:1, duration:.08}, .72)
+
+// Phase 5: Result
+  .fromTo('#asm-result', {opacity:0, y:6}, {opacity:1, y:0, duration:.15, ease:'power2.out'}, .78)
+
+// Hide cursor after prompt is done
+  .to('#asm-prompt-cursor', {opacity:0, duration:.1}, .40);
 
 
 /* ═══ HOW — horizontal scroll ═══ */
