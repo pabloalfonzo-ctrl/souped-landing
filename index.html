@@ -310,7 +310,7 @@
 <!-- ═══ NAV — floating pill ═══ -->
 <header>
   <nav class="fixed top-4 left-4 right-4 z-50 flex justify-center" aria-label="Main navigation">
-    <div class="nav-blur rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-lg shadow-black/30 max-w-3xl w-full" style="background:rgba(8,0,37,.65);border:1px solid rgba(255,255,255,.08)">
+    <div class="nav-blur rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-lg shadow-black/30 max-w-4xl w-full" style="background:rgba(8,0,37,.65);border:1px solid rgba(255,255,255,.08)">
 
       <!-- Logo -->
       <a href="#" aria-label="Souped — home" class="mr-auto pl-2">
@@ -357,7 +357,7 @@
   <div class="mesh-orb mesh-orb-2" aria-hidden="true"></div>
   <div class="mesh-orb mesh-orb-3" aria-hidden="true"></div>
 
-  <div class="relative z-10 max-w-5xl mx-auto w-full flex-1 flex flex-col justify-center text-center">
+  <div class="relative z-10 max-w-[1440px] mx-auto w-full flex-1 flex flex-col justify-center text-center">
 
     <!-- Pill -->
     <div class="hero-anim mb-8" style="animation-delay:.1s">
@@ -473,8 +473,8 @@
 
 <!-- ═══ STATS BENTO — Exergy3-inspired ═══ -->
 <section id="stats" class="bg-cream py-32 px-6" aria-label="Souped by the numbers">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.2rem)] leading-tight text-ink mb-14">
+  <div class="max-w-[1440px] mx-auto">
+    <h2 class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.2rem)] leading-tight text-ink mb-14 text-center">
       The true cost of<br>the <span class="text-orange">Idea Tax</span>
     </h2>
 
@@ -528,7 +528,7 @@
 
 <!-- ═══ PROBLEM — light section ═══ -->
 <section id="problem" class="bg-cream pb-32 px-6" aria-labelledby="problem-h2">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-[1440px] mx-auto">
     <div class="max-w-2xl mb-16">
       <h2 id="problem-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-ink mb-5">
         You've been paying<br>the <span class="text-orange">Idea Tax</span>
@@ -565,7 +565,7 @@
 <section id="how" class="bg-dark" aria-labelledby="how-h2">
   <div style="height:250vh">
     <div style="position:sticky;top:64px;height:calc(100vh - 64px);display:flex;flex-direction:column;justify-content:center;overflow:hidden" class="px-6 pt-12">
-      <div class="max-w-6xl mx-auto w-full mb-10">
+      <div class="max-w-[1440px] mx-auto w-full mb-10">
         <p class="reveal font-display font-bold text-xs uppercase tracking-[.12em] text-orange mb-4">Three steps. That's it.</p>
         <h2 id="how-h2" class="reveal delay-1 font-display font-extrabold text-[clamp(1.5rem,3.2vw,2.2rem)] leading-snug text-white">
           Souping is what happens after<br>you describe what you want, bringing<br>your ideas to life in under 90 minutes.
@@ -621,9 +621,9 @@
 
 <!-- ═══ WHO — light ═══ -->
 <section id="who" class="bg-cream py-32 px-6" aria-labelledby="who-h2">
-  <div class="max-w-6xl mx-auto">
-    <div class="max-w-xl mb-14">
-      <h2 id="who-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-ink">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="mb-14">
+      <h2 id="who-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-ink text-center">
         Nothing will hold<br>you back anymore
       </h2>
     </div>
@@ -651,9 +651,9 @@
 
 <!-- ═══ FEATURES — dark ═══ -->
 <section id="features" class="bg-dark py-32 px-6" aria-labelledby="feat-h2">
-  <div class="max-w-6xl mx-auto">
-    <div class="max-w-xl mb-14">
-      <h2 id="feat-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-white">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="mb-14">
+      <h2 id="feat-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] leading-tight text-white text-center">
         Cut the gap between<br>building and shipping
       </h2>
     </div>
@@ -669,30 +669,24 @@
 </section>
 
 
-<!-- ═══ TESTIMONIALS — light, horizontal slide ═══ -->
-<section id="reviews" class="bg-cream" aria-labelledby="reviews-h2">
-  <div style="height:180vh">
-    <div style="position:sticky;top:64px;height:calc(100vh - 64px);display:flex;flex-direction:column;justify-content:center;overflow:hidden" class="px-6">
-      <div class="max-w-6xl mx-auto w-full mb-10">
-        <h2 id="reviews-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-ink">Don't take our word for it</h2>
-      </div>
-      <div class="overflow-hidden">
-        <div class="testi-track" id="testi-track">
-          <article class="testi-card card-cream">
-            <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-full bg-orange flex items-center justify-center text-white font-display font-bold text-sm flex-shrink-0">AM</div><div><p class="font-semibold text-sm text-ink">Alex M.</p><p class="text-xs text-ink-muted">Indie Hacker</p></div></div>
-            <p class="text-ink-mid leading-relaxed">"I shipped my first SaaS in 40 minutes. No DevOps, no headaches. Just described it and it was live."</p>
-          </article>
-          <article class="testi-card card-cream">
-            <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-full bg-ink flex items-center justify-center text-cream font-display font-bold text-sm flex-shrink-0">SL</div><div><p class="font-semibold text-sm text-ink">Sarah L.</p><p class="text-xs text-ink-muted">Product Manager</p></div></div>
-            <p class="text-ink-mid leading-relaxed">"Finally, a tool that doesn't make me feel like I need a CS degree. Described my app, and it was deployed with a real domain."</p>
-          </article>
-          <article class="testi-card card-cream">
-            <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-full bg-sage flex items-center justify-center text-white font-display font-bold text-sm flex-shrink-0">JK</div><div><p class="font-semibold text-sm text-ink">James K.</p><p class="text-xs text-ink-muted">Engineering Lead</p></div></div>
-            <p class="text-ink-mid leading-relaxed">"Our compliance team was skeptical. Then they saw the audit logs, RBAC, and SSO. We're moving the whole team over."</p>
-          </article>
-          <div style="width:60px;flex-shrink:0"></div>
-        </div>
-      </div>
+<!-- ═══ TESTIMONIALS — static grid ═══ -->
+<section id="reviews" class="bg-cream py-32 px-6" aria-labelledby="reviews-h2">
+  <div class="max-w-[1440px] mx-auto">
+    <h2 id="reviews-h2" class="reveal font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-ink text-center mb-14">Don't take our word for it</h2>
+    <div class="grid md:grid-cols-3 gap-5 mb-14">
+      <article class="card-cream reveal delay-1">
+        <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-full bg-orange flex items-center justify-center text-white font-body font-bold text-sm flex-shrink-0">AM</div><div><p class="font-semibold text-sm text-ink">Alex M.</p><p class="text-xs text-ink-muted">Indie Hacker</p></div></div>
+        <p class="text-ink-mid leading-relaxed">"I shipped my first SaaS in 40 minutes. No DevOps, no headaches. Just described it and it was live."</p>
+      </article>
+      <article class="card-cream reveal delay-2">
+        <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-full bg-ink flex items-center justify-center text-cream font-body font-bold text-sm flex-shrink-0">SL</div><div><p class="font-semibold text-sm text-ink">Sarah L.</p><p class="text-xs text-ink-muted">Product Manager</p></div></div>
+        <p class="text-ink-mid leading-relaxed">"Finally, a tool that doesn't make me feel like I need a CS degree. Described my app, and it was deployed with a real domain."</p>
+      </article>
+      <article class="card-cream reveal delay-3">
+        <div class="flex items-center gap-3 mb-5"><div class="w-10 h-10 rounded-full bg-sage flex items-center justify-center text-white font-body font-bold text-sm flex-shrink-0">JK</div><div><p class="font-semibold text-sm text-ink">James K.</p><p class="text-xs text-ink-muted">Engineering Lead</p></div></div>
+        <p class="text-ink-mid leading-relaxed">"Our compliance team was skeptical. Then they saw the audit logs, RBAC, and SSO. We're moving the whole team over."</p>
+      </article>
+    </div>
       <div class="marquee-wrap border-y border-cream-dark py-4 mt-10">
         <div class="marquee-track mq-rev">
           <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">1,200+ Apps Shipped</span><span class="text-orange/30 mx-3">·</span>
@@ -709,7 +703,6 @@
           <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">Ship in Under 90 Min</span><span class="text-orange/30 mx-3">·</span>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
@@ -749,7 +742,7 @@
 
 <!-- ═══ SIGNUP ═══ -->
 <section id="signup" class="bg-cream py-20 px-6" aria-labelledby="signup-h2">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-[1440px] mx-auto">
     <div class="signup-grain px-10 py-16 md:px-16 lg:px-20 reveal">
       <div class="relative z-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <!-- Left — text -->
@@ -885,7 +878,7 @@
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="bg-dark py-12 px-6 border-t border-white/5">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+  <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
     <div class="text-center md:text-left"><a href="#" aria-label="Souped — back to top"><img src="logo-white.svg" alt="Souped" class="h-5 inline-block"></a><p class="text-white/35 text-xs mt-1.5">Describing it is shipping it.</p></div>
     <nav class="flex flex-wrap justify-center gap-6" aria-label="Footer navigation">
       <a href="#how" class="text-white/40 hover:text-white transition-colors">How it works</a>
@@ -1052,13 +1045,7 @@ gsap.to(howTrack, {
 });
 
 
-/* ═══ TESTIMONIALS — horizontal slide ═══ */
-const testiTrack = document.getElementById('testi-track');
-const testiWidth = testiTrack.scrollWidth - window.innerWidth + 100;
-gsap.to(testiTrack, {
-  x: -testiWidth, ease:'none',
-  scrollTrigger: { trigger:'#reviews', start:'top top', end:'bottom bottom', scrub:1 }
-});
+/* ═══ TESTIMONIALS — now static grid, no GSAP needed ═══ */
 
 
 /* ═══ BENTO STATS — stagger + counter ═══ */
