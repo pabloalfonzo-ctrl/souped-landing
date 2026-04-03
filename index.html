@@ -49,6 +49,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Souped","url":"https://souped.app"},{"@type":"SoftwareApplication","name":"Souped","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Conversational Production?","acceptedAnswer":{"@type":"Answer","text":"Describing what you want to build and having it live in production in a single action."}},{"@type":"Question","name":"Do I need to know how to code?","acceptedAnswer":{"@type":"Answer","text":"Nop. Just describe what you want."}},{"@type":"Question","name":"What is the Idea Tax?","acceptedAnswer":{"@type":"Answer","text":"The time, money, and permission between having an idea and shipping it."}},{"@type":"Question","name":"How fast can I ship?","acceptedAnswer":{"@type":"Answer","text":"Most users ship in under 90 minutes."}},{"@type":"Question","name":"Who owns the apps?","acceptedAnswer":{"@type":"Answer","text":"You do. Apps deploy to your own accounts."}}]}]}
@@ -768,7 +769,7 @@
 
 
 <script>
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 /* ═══ REDUCED MOTION CHECK ═══ */
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1029,13 +1030,18 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-/* ═══ Smooth anchor scroll (L4) ═══ */
+/* ═══ Smooth anchor scroll — slow & pronounced ═══ */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const target = document.querySelector(a.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+      const y = target.getBoundingClientRect().top + window.scrollY - 80;
+      if (typeof gsap !== 'undefined') {
+        gsap.to(window, { scrollTo: { y: y, autoKill: true }, duration: 1.4, ease: 'power3.inOut' });
+      } else {
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
     }
   });
 });
