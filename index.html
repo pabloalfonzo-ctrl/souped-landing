@@ -23,7 +23,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -40,7 +40,7 @@
             sage:'#16A34A','mint':'#E8F5EC',
           },
           fontFamily: {
-            display:['"Bricolage Grotesque"','sans-serif'],
+            display:['"Rethink Sans"','sans-serif'],
             body:['"DM Sans"','sans-serif'],
             mono:['"JetBrains Mono"','monospace'],
           },
@@ -61,11 +61,23 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:auto}
     body{font-family:'DM Sans',sans-serif;background:#080025;color:#FFF8F0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-    .font-display{font-family:'Bricolage Grotesque',sans-serif}
+    .font-display{font-family:'Rethink Sans',sans-serif}
     .font-mono{font-family:'JetBrains Mono',monospace}
 
     /* Grain */
     body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.12;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+
+    /* Logo jiggle */
+    .logo-jiggle{transition:transform .2s ease}
+    .logo-jiggle:hover{animation:jiggle .4s ease}
+    @keyframes jiggle{
+      0%{transform:rotate(0)}
+      20%{transform:rotate(-6deg) scale(1.05)}
+      40%{transform:rotate(5deg)}
+      60%{transform:rotate(-3deg)}
+      80%{transform:rotate(2deg)}
+      100%{transform:rotate(0)}
+    }
 
     /* Nav */
     .nav-blur{backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%)}
@@ -287,7 +299,7 @@
 
       <!-- Logo -->
       <a href="#" aria-label="Souped — home" class="mr-auto pl-2">
-        <img src="logo-white.svg" alt="Souped" class="h-5">
+        <img src="logo-white.svg" alt="Souped" class="h-5 logo-jiggle">
       </a>
 
       <!-- Center links (desktop) -->
