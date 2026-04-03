@@ -8,6 +8,7 @@
   <meta name="description" content="Souped is the first Conversational Production platform. Describe an idea and have it live in production — no code, no pipelines, no engineers needed.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#080025">
+  <link rel="icon" type="image/svg+xml" href="logo-white.svg">
   <link rel="canonical" href="https://souped.app/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://souped.app/">
@@ -18,6 +19,7 @@
   <meta name="twitter:title" content="Souped — Describing it is shipping it.">
   <meta name="twitter:description" content="The first platform where describing an idea and having it live in production are one and the same.">
   <meta name="twitter:image" content="https://souped.app/og-image.png">
+  <meta name="twitter:url" content="https://souped.app/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +54,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Souped","url":"https://souped.app"},{"@type":"SoftwareApplication","name":"Souped","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Conversational Production?","acceptedAnswer":{"@type":"Answer","text":"Describing what you want to build and having it live in production in a single action."}},{"@type":"Question","name":"Do I need to know how to code?","acceptedAnswer":{"@type":"Answer","text":"Nop. Just describe what you want."}},{"@type":"Question","name":"What is the Idea Tax?","acceptedAnswer":{"@type":"Answer","text":"The time, money, and permission between having an idea and shipping it."}},{"@type":"Question","name":"How fast can I ship?","acceptedAnswer":{"@type":"Answer","text":"Most users ship in under 90 minutes."}},{"@type":"Question","name":"Who owns the apps?","acceptedAnswer":{"@type":"Answer","text":"You do. Apps deploy to your own accounts."}}]}]}
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Souped","url":"https://souped.app"},{"@type":"SoftwareApplication","name":"Souped","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Conversational Production?","acceptedAnswer":{"@type":"Answer","text":"Invented by Souped, Conversational Production focuses on describing what you want to build and having it live in production in a single action. It requires no code, deploy pipelines, or infrastructure knowledge."}},{"@type":"Question","name":"Do I need to know how to code to use Conversational Production?","acceptedAnswer":{"@type":"Answer","text":"Nop, you simply describe what you want; Souped builds it, deploys it, and monitors it. The only requirement is an idea."}},{"@type":"Question","name":"What is the Idea Tax?","acceptedAnswer":{"@type":"Answer","text":"The time, money, and permission you pay between having an idea and shipping it — including engineers, estimates, sprints, staging environments, and DevOps. Souped eliminates the Idea Tax entirely."}},{"@type":"Question","name":"How fast can I ship my first app?","acceptedAnswer":{"@type":"Answer","text":"Most Souped users ship in under 90 minutes, and some even in under 30. If your first try takes longer than expected, contact us!"}},{"@type":"Question","name":"Who owns the apps I deploy?","acceptedAnswer":{"@type":"Answer","text":"You do. Souped is the orchestration layer, but since apps deploy to your own Vercel and Supabase accounts, the infrastructure is always yours."}}]}]}
   </script>
 
   <style>
@@ -240,7 +242,7 @@
     }
     .card-glass:hover{
       transform:translateY(-4px);
-      border-color:rgba(249,115,22,.25);
+      border-color:rgba(255,68,51,.25);
       box-shadow:0 20px 50px rgba(0,0,0,.3);
     }
     .card-cream{
@@ -252,7 +254,7 @@
     }
     .card-cream:hover{
       transform:translateY(-4px);
-      box-shadow:0 20px 50px rgba(26,26,15,.1);
+      box-shadow:0 20px 50px rgba(8,0,37,.12);
     }
 
     /* ═══ Before / After ═══ */
@@ -271,7 +273,6 @@
     /* ═══ Horizontal scroll ═══ */
     .how-track{display:flex;gap:24px;width:max-content;will-change:transform}
     .how-card{width:min(440px,82vw);flex-shrink:0;border-radius:20px;padding:48px 40px}
-    .how-num{font-family:'Bricolage Grotesque',sans-serif;font-size:5.5rem;font-weight:800;line-height:1;color:rgba(249,115,22,.1)}
     .testi-track{display:flex;gap:20px;width:max-content;will-change:transform}
     .testi-card{width:min(380px,82vw);flex-shrink:0;border-radius:20px;padding:32px}
   </style>
@@ -391,7 +392,7 @@
       <div class="step-counter" aria-hidden="true">
         <div class="step-dot active" id="sd-0"></div><div class="step-dot" id="sd-1"></div><div class="step-dot" id="sd-2"></div><div class="step-dot" id="sd-3"></div>
       </div>
-      <div id="asm-intro" class="absolute inset-0 flex items-center justify-center text-center pointer-events-none z-5 px-8" style="opacity:0">
+      <div id="asm-intro" class="absolute inset-0 flex items-center justify-center text-center pointer-events-none z-10 px-8" style="opacity:0">
         <div>
           <p class="font-display font-bold text-xs uppercase tracking-[.14em] text-orange mb-3">Watch it happen</p>
           <h2 class="font-display font-extrabold text-[clamp(2rem,5vw,3.5rem)] text-white leading-tight">From description<br>to production</h2>
@@ -455,7 +456,7 @@
           <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-ink/50">Average time wasted</p>
         </div>
         <div class="border-t border-dashed border-ink/15 mb-6 mt-2"></div>
-        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px #1A1A0F;" data-count="6" data-suffix=" mo">0 mo</p>
+        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px #080025;" data-count="6" data-suffix=" mo">0 mo</p>
         <p class="text-ink/60 text-sm leading-relaxed mt-4 max-w-sm">The average idea sits in a backlog for 6 months before anyone even looks at it. With Souped, it ships the same day.</p>
       </div>
 
@@ -485,7 +486,7 @@
           <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-ink/40">Average first deploy</p>
         </div>
         <div class="border-t border-dashed border-ink/12 mb-6 mt-2"></div>
-        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px #1A1A0F;" data-count="90" data-prefix="< " data-suffix="m">< 0m</p>
+        <p class="bento-num font-display font-extrabold text-[clamp(4rem,10vw,7rem)] leading-[0.85] tracking-tight" aria-live="polite" aria-atomic="true" style="color:transparent;-webkit-text-stroke:2px #080025;" data-count="90" data-prefix="< " data-suffix="m">< 0m</p>
         <p class="text-ink/50 text-sm leading-relaxed mt-4 max-w-sm">Most users ship their first app in under 90 minutes. Some in under 30. No engineers, no pipelines, no permission needed.</p>
       </div>
 
@@ -548,7 +549,7 @@
               <p class="font-display font-bold text-[.65rem] uppercase tracking-[.14em] text-ink/45">Step 01</p>
             </div>
             <div class="border-t border-dashed border-ink/15 mb-5 mt-2"></div>
-            <p class="font-display font-extrabold text-[clamp(4rem,8vw,6rem)] leading-[0.85] tracking-tight mb-4" style="color:transparent;-webkit-text-stroke:2px #1A1A0F;">01</p>
+            <p class="font-display font-extrabold text-[clamp(4rem,8vw,6rem)] leading-[0.85] tracking-tight mb-4" style="color:transparent;-webkit-text-stroke:2px #080025;">01</p>
             <h3 class="font-display font-extrabold text-3xl text-ink mb-3">Describe</h3>
             <p class="text-ink/55 leading-relaxed text-base">Write what you want to build. Just describe it, and we'll handle the solution.</p>
           </div>
@@ -763,7 +764,7 @@
       <a href="#faq" class="text-white/40 hover:text-white transition-colors">FAQ</a>
       <a href="#signup" class="text-white/40 hover:text-white transition-colors">Sign up</a>
     </nav>
-    <p class="text-white/30 text-xs">© 2025 Souped. All rights reserved.</p>
+    <p class="text-white/30 text-xs">© <span id="cr-year"></span> Souped. All rights reserved.</p>
   </div>
 </footer>
 
@@ -990,15 +991,6 @@ window.handleSignup = function(e) {
 };
 
 
-/* ═══ Signup form listener (replaces inline onsubmit) ═══ */
-const signupForm = document.querySelector('form[aria-label="Early access signup"]');
-if (signupForm) signupForm.addEventListener('submit', handleSignup);
-
-/* ═══ Mobile nav link listeners (replaces inline onclick) ═══ */
-document.querySelectorAll('.mobile-nav-link').forEach(link => {
-  link.addEventListener('click', closeMobileMenu);
-});
-
 /* ═══ Mobile menu (H5) ═══ */
 const menuBtn = document.getElementById('mobile-menu-btn');
 const menuDrawer = document.getElementById('mobile-menu');
@@ -1018,6 +1010,15 @@ if (menuBtn) {
   });
 }
 
+/* ═══ Signup form listener ═══ */
+const signupForm = document.querySelector('form[aria-label="Early access signup"]');
+if (signupForm) signupForm.addEventListener('submit', handleSignup);
+
+/* ═══ Mobile nav link listeners ═══ */
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
 /* ═══ Nav — subtle bg shift on scroll ═══ */
 const navPill = document.querySelector('header nav > div');
 window.addEventListener('scroll', () => {
@@ -1029,6 +1030,10 @@ window.addEventListener('scroll', () => {
     navPill.style.boxShadow = '0 4px 16px rgba(0,0,0,.2)';
   }
 }, { passive: true });
+
+/* ═══ Dynamic copyright year ═══ */
+const crYear = document.getElementById('cr-year');
+if (crYear) crYear.textContent = new Date().getFullYear();
 
 /* ═══ Smooth anchor scroll — slow & pronounced ═══ */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
