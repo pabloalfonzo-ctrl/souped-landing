@@ -1207,7 +1207,7 @@ function closeAuth() {
 
 // All "Start building" and signup links open the modal
 document.querySelectorAll('a[href="#signup"]').forEach(a => {
-  a.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); openAuth(); });
+  a.addEventListener('click', (e) => { e.preventDefault(); e.stopImmediatePropagation(); openAuth(); }, true);
 });
 if (authClose) authClose.addEventListener('click', closeAuth);
 if (authBackdrop) authBackdrop.addEventListener('click', closeAuth);
