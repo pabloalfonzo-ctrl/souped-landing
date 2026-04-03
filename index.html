@@ -279,7 +279,12 @@
     .card-after li strong{color:#080025;font-weight:700}
 
     /* ═══ Signup grain ═══ */
-    .signup-grain{position:relative;background:linear-gradient(140deg,#FFBB33 0%,#FF4433 50%,#7B68EE 100%);overflow:hidden;border-radius:24px}
+    .signup-grain{position:relative;background:linear-gradient(140deg,#FFBB33 0%,#FF4433 50%,#7B68EE 100%);background-size:200% 200%;animation:grain-move 6s ease-in-out infinite alternate;overflow:hidden;border-radius:24px}
+    @keyframes grain-move{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
     .signup-grain::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='grain2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23grain2)' opacity='1'/%3E%3C/svg%3E")}
 
     /* ═══ Horizontal scroll ═══ */
@@ -639,12 +644,12 @@
       </h2>
     </div>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <article class="card-glass reveal delay-1"><div class="text-3xl mb-4" aria-hidden="true">🚀</div><h3 class="font-display font-bold text-lg text-white mb-2">Deploy</h3><p class="text-white/60 text-sm leading-relaxed">Your app, live with database, auth, and custom domain included.</p></article>
-      <article class="card-glass reveal delay-2"><div class="text-3xl mb-4" aria-hidden="true">🩺</div><h3 class="font-display font-bold text-lg text-white mb-2">Monitor</h3><p class="text-white/60 text-sm leading-relaxed">Detectors track health in production. Issues are caught before users complain.</p></article>
-      <article class="card-glass reveal delay-3"><div class="text-3xl mb-4" aria-hidden="true">🔔</div><h3 class="font-display font-bold text-lg text-white mb-2">Notify</h3><p class="text-white/60 text-sm leading-relaxed">Your team is instantly notified of completed deployments, health alerts, and feedback.</p></article>
-      <article class="card-glass reveal delay-1"><div class="text-3xl mb-4" aria-hidden="true">🔐</div><h3 class="font-display font-bold text-lg text-white mb-2">Access</h3><p class="text-white/60 text-sm leading-relaxed">You decide who sees what, whether different members, clients, or users.</p></article>
-      <article class="card-glass reveal delay-2"><div class="text-3xl mb-4" aria-hidden="true">📊</div><h3 class="font-display font-bold text-lg text-white mb-2">Organize</h3><p class="text-white/60 text-sm leading-relaxed">A single, intuitive dashboard to track projects, teams, and credentials.</p></article>
-      <article class="card-glass reveal delay-3"><div class="text-3xl mb-4" aria-hidden="true">🤖</div><h3 class="font-display font-bold text-lg text-white mb-2">AI Skills</h3><p class="text-white/60 text-sm leading-relaxed">Vetted skills for frontend, backend, design, testing, and security.</p></article>
+      <article class="card-glass reveal delay-1"><div class="w-10 h-1 rounded-full mb-5" style="background:#FF4433" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Deploy</h3><p class="text-white/60 text-sm leading-relaxed">Your app, live with database, auth, and custom domain included.</p></article>
+      <article class="card-glass reveal delay-2"><div class="w-10 h-1 rounded-full mb-5" style="background:#FFBB33" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Monitor</h3><p class="text-white/60 text-sm leading-relaxed">Detectors track health in production. Issues are caught before users complain.</p></article>
+      <article class="card-glass reveal delay-3"><div class="w-10 h-1 rounded-full mb-5" style="background:#7B68EE" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Notify</h3><p class="text-white/60 text-sm leading-relaxed">Your team is instantly notified of completed deployments, health alerts, and feedback.</p></article>
+      <article class="card-glass reveal delay-1"><div class="w-10 h-1 rounded-full mb-5" style="background:#FFBB33" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Access</h3><p class="text-white/60 text-sm leading-relaxed">You decide who sees what, whether different members, clients, or users.</p></article>
+      <article class="card-glass reveal delay-2"><div class="w-10 h-1 rounded-full mb-5" style="background:#7B68EE" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">Organize</h3><p class="text-white/60 text-sm leading-relaxed">A single, intuitive dashboard to track projects, teams, and credentials.</p></article>
+      <article class="card-glass reveal delay-3"><div class="w-10 h-1 rounded-full mb-5" style="background:#FF4433" aria-hidden="true"></div><h3 class="font-display font-bold text-lg text-white mb-2">AI Skills</h3><p class="text-white/60 text-sm leading-relaxed">Vetted skills for frontend, backend, design, testing, and security.</p></article>
     </div>
   </div>
 </section>
@@ -748,18 +753,18 @@
             </div>
             <p id="signup-error" role="alert" class="text-white/80 text-sm" style="min-height:1.25rem"></p>
           </form>
-          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4">
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
-              <span class="text-white/40 text-[.7rem]">Free to start</span>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mt-6">
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>
+              <span class="text-white/60 text-sm font-medium">Free to start</span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
-              <span class="text-white/40 text-[.7rem]">Ship in minutes</span>
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>
+              <span class="text-white/60 text-sm font-medium">Ship in minutes</span>
             </div>
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0"></span>
-              <span class="text-white/40 text-[.7rem]">You own everything</span>
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>
+              <span class="text-white/60 text-sm font-medium">You own everything</span>
             </div>
           </div>
         </div>
