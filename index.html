@@ -7,7 +7,7 @@
 
   <meta name="description" content="Souped is the first Conversational Production platform. Describe an idea and have it live in production — no code, no pipelines, no engineers needed.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0D0D2B">
+  <meta name="theme-color" content="#080025">
   <link rel="canonical" href="https://souped.app/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://souped.app/">
@@ -30,11 +30,11 @@
         extend: {
           colors: {
             cream:'#FFF8F0','cream-mid':'#F3EBE0','cream-dark':'#E5D9CA',
-            dark:'#0D0D2B','dark-mid':'#14142E','dark-card':'#1C1C38',
+            dark:'#080025','dark-mid':'#14142E','dark-card':'#1C1C38',
             orange:'#FF4433','orange-dk':'#E03328','orange-lt':'#FF6B5E',
             amber:'#FFBB33','amber-dk':'#E5A020',
             violet:'#7B68EE','violet-dk':'#6350D8','violet-lt':'#9B8AF5',
-            ink:'#0D0D2B','ink-mid':'#2A2A4A','ink-muted':'#5A5A78',
+            ink:'#080025','ink-mid':'#2A2A4A','ink-muted':'#5A5A78',
             sage:'#16A34A','mint':'#E8F5EC',
           },
           fontFamily: {
@@ -57,7 +57,7 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:auto}
-    body{font-family:'DM Sans',sans-serif;background:#0D0D2B;color:#FFF8F0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    body{font-family:'DM Sans',sans-serif;background:#080025;color:#FFF8F0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
     .font-display{font-family:'Bricolage Grotesque',sans-serif}
     .font-mono{font-family:'JetBrains Mono',monospace}
 
@@ -107,7 +107,7 @@
 
     :focus-visible{outline:2px solid #FF4433;outline-offset:3px;border-radius:6px}
     ::-webkit-scrollbar{width:4px}
-    ::-webkit-scrollbar-track{background:#0D0D2B}
+    ::-webkit-scrollbar-track{background:#080025}
     ::-webkit-scrollbar-thumb{background:#FF4433;border-radius:10px}
 
     /* ═══ MESH GRADIENT HERO ═══ */
@@ -123,7 +123,7 @@
         radial-gradient(ellipse 80% 70% at 50% 30%, rgba(255,187,51,.35) 0%, transparent 55%),
         radial-gradient(ellipse 60% 50% at 85% 20%, rgba(255,68,51,.4) 0%, transparent 50%),
         radial-gradient(ellipse 50% 60% at 90% 80%, rgba(255,68,51,.3) 0%, transparent 50%),
-        #0D0D2B;
+        #080025;
       animation:mesh-shift 14s ease-in-out infinite alternate;
     }
     @keyframes mesh-shift{
@@ -195,7 +195,7 @@
     .app-window{width:min(560px,90vw);background:#1C1C38;border-radius:16px;border:1px solid rgba(255,255,255,.08);box-shadow:0 40px 100px rgba(0,0,0,.5);overflow:hidden;position:relative;z-index:10}
     .window-bar{background:#16163A;padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.05)}
     .dot{width:10px;height:10px;border-radius:50%}.dot-r{background:#FF5F57}.dot-y{background:#FEBC2E}.dot-g{background:#28C840}
-    .window-url{flex:1;background:#0D0D2B;border-radius:6px;padding:4px 12px;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:rgba(255,255,255,.35);text-align:center}
+    .window-url{flex:1;background:#080025;border-radius:6px;padding:4px 12px;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:rgba(255,255,255,.35);text-align:center}
     .window-body{padding:24px;min-height:300px;position:relative}
     .prompt-line{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px}
     .prompt-icon{width:28px;height:28px;background:#FF4433;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;margin-top:2px}
@@ -224,8 +224,8 @@
     .step-dot.active{background:#FF4433;transform:scale(1.4)}
 
     /* ═══ SECTION BACKGROUNDS ═══ */
-    .bg-dark{background:#0D0D2B;color:#FFF8F0}
-    .bg-cream{background:#FFF8F0;color:#0D0D2B}
+    .bg-dark{background:#080025;color:#FFF8F0}
+    .bg-cream{background:#FFF8F0;color:#080025}
     .bg-dark-mid{background:#14142E;color:#FFF8F0}
 
     /* ═══ CARDS ═══ */
@@ -254,7 +254,7 @@
     }
 
     /* ═══ Before / After ═══ */
-    .card-before{background:#0D0D2B;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px;color:#7A7A90}
+    .card-before{background:#080025;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px;color:#7A7A90}
     .card-before .head{color:rgba(255,255,255,.35);font-size:.7rem}
     .card-before li strong{color:#B0B0CC}
     .card-after{background:linear-gradient(135deg,#FF4433,#E03328);border-radius:20px;padding:36px;color:rgba(255,255,255,.85)}
@@ -280,7 +280,7 @@
 <!-- ═══ NAV — floating pill ═══ -->
 <header>
   <nav class="fixed top-4 left-4 right-4 z-50 flex justify-center" aria-label="Main navigation">
-    <div class="nav-blur rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-lg shadow-black/30 max-w-3xl w-full" style="background:rgba(13,13,43,.65);border:1px solid rgba(255,255,255,.08)">
+    <div class="nav-blur rounded-2xl px-4 py-2.5 flex items-center gap-2 shadow-lg shadow-black/30 max-w-3xl w-full" style="background:rgba(8,0,37,.65);border:1px solid rgba(255,255,255,.08)">
 
       <!-- Logo -->
       <a href="#" aria-label="Souped — home" class="mr-auto pl-2">
@@ -309,7 +309,7 @@
 
   <!-- Mobile menu drawer (floats below the pill) -->
   <nav id="mobile-menu" class="md:hidden fixed top-20 left-4 right-4 z-50 overflow-hidden transition-all duration-300 rounded-2xl" style="max-height:0" aria-label="Mobile navigation">
-      <div class="nav-blur shadow-lg shadow-black/30 rounded-2xl px-6 py-5 flex flex-col gap-4" style="background:rgba(13,13,43,.8);border:1px solid rgba(255,255,255,.08)">
+      <div class="nav-blur shadow-lg shadow-black/30 rounded-2xl px-6 py-5 flex flex-col gap-4" style="background:rgba(8,0,37,.8);border:1px solid rgba(255,255,255,.08)">
         <a href="#how" class="mobile-nav-link text-sm font-medium text-white/60 hover:text-white transition-colors">How it works</a>
         <a href="#features" class="mobile-nav-link text-sm font-medium text-white/60 hover:text-white transition-colors">Features</a>
         <a href="#faq" class="mobile-nav-link text-sm font-medium text-white/60 hover:text-white transition-colors">FAQ</a>
@@ -1019,10 +1019,10 @@ if (menuBtn) {
 const navPill = document.querySelector('header nav > div');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 40) {
-    navPill.style.background = 'rgba(13,13,43,.82)';
+    navPill.style.background = 'rgba(8,0,37,.82)';
     navPill.style.boxShadow = '0 8px 32px rgba(0,0,0,.35)';
   } else {
-    navPill.style.background = 'rgba(13,13,43,.65)';
+    navPill.style.background = 'rgba(8,0,37,.65)';
     navPill.style.boxShadow = '0 4px 16px rgba(0,0,0,.2)';
   }
 }, { passive: true });
