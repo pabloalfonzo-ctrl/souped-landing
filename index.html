@@ -143,7 +143,7 @@
     .mesh-orb-2{width:550px;height:550px;background:#3314DC;bottom:-20%;left:-10%;animation-delay:-3s;opacity:.4;animation-duration:9s}
     .mesh-orb-3{width:450px;height:450px;background:#FFBB33;top:20%;left:15%;animation-delay:-5s;opacity:.25;animation-duration:11s}
 
-    /* Hero CSS entrance — no JS dependency */
+    /* Hero CSS entrance */
     .hero-anim{
       opacity:0;
       transform:translateY(24px);
@@ -258,13 +258,13 @@
     }
 
     /* ═══ Before / After ═══ */
-    .card-before{background:#080025;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px;color:#7A7A90}
-    .card-before .head{color:rgba(255,255,255,.35);font-size:.7rem}
-    .card-before li strong{color:#B0B0CC}
-    .card-after{background:linear-gradient(135deg,#FF4433,#E03328);border-radius:20px;padding:36px;color:rgba(255,255,255,.85)}
-    .card-after .head{color:rgba(255,255,255,.5);font-size:.7rem}
-    .card-after li{color:#fff}
-    .card-after li strong{color:#fff;font-weight:700}
+    .card-before{background:linear-gradient(135deg,#FF4433,#CC2222);border-radius:20px;padding:36px;color:rgba(255,255,255,.7)}
+    .card-before .head{color:rgba(255,255,255,.45);font-size:.7rem}
+    .card-before li strong{color:rgba(255,255,255,.9)}
+    .card-after{background:#FFBB33;border-radius:20px;padding:36px;color:rgba(8,0,37,.7)}
+    .card-after .head{color:rgba(8,0,37,.4);font-size:.7rem}
+    .card-after li{color:rgba(8,0,37,.8)}
+    .card-after li strong{color:#080025;font-weight:700}
 
     /* ═══ Signup grain ═══ */
     .signup-grain{position:relative;background:linear-gradient(140deg,#FFBB33 0%,#FF4433 50%,#7B68EE 100%);overflow:hidden;border-radius:24px}
@@ -351,7 +351,7 @@
 
     <!-- CTAs — fade in after subtext -->
     <div id="hero-ctas" class="flex flex-wrap gap-3 justify-center" style="opacity:0;transform:translateY(12px)">
-      <a href="#signup" class="bg-orange text-white font-semibold text-sm px-8 py-4 rounded-xl hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start building →</a>
+      <a href="#signup" class="bg-orange text-white font-semibold text-sm px-8 py-4 rounded-xl hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start building</a>
       <a href="#how" class="border border-white/15 text-white/70 font-semibold text-sm px-8 py-4 rounded-xl hover:border-white/35 hover:text-white transition-all">See how it works</a>
     </div>
 
@@ -361,14 +361,18 @@
   <div class="hero-anim relative z-10 pt-10" style="animation-delay:.85s">
     <div class="marquee-wrap border-y border-white/5 py-4">
       <div class="marquee-track mq-fwd">
-        <span class="font-display font-semibold text-sm text-white/25 mx-10">1,200+ apps shipped</span><span class="text-orange/30 mx-3">·</span>
-        <span class="font-display font-semibold text-sm text-white/25 mx-10">avg. 47 min first deploy</span><span class="text-orange/30 mx-3">·</span>
-        <span class="font-display font-semibold text-sm text-white/25 mx-10">$0 paid to builders</span><span class="text-orange/30 mx-3">·</span>
-        <span class="font-display font-semibold text-sm text-white/25 mx-10">ship in under 90 min</span><span class="text-orange/30 mx-3">·</span>
-        <span class="font-display font-semibold text-sm text-white/25 mx-10">1,200+ apps shipped</span><span class="text-orange/30 mx-3">·</span>
-        <span class="font-display font-semibold text-sm text-white/25 mx-10">avg. 47 min first deploy</span><span class="text-orange/30 mx-3">·</span>
-        <span class="font-display font-semibold text-sm text-white/25 mx-10">$0 paid to builders</span><span class="text-orange/30 mx-3">·</span>
-        <span class="font-display font-semibold text-sm text-white/25 mx-10">ship in under 90 min</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">1,200+ Apps Shipped</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">Avg. 47 Min First Deploy</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">$0 Paid to Builders</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">Ship in Under 90 Min</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">1,200+ Apps Shipped</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">Avg. 47 Min First Deploy</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">$0 Paid to Builders</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">Ship in Under 90 Min</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">1,200+ Apps Shipped</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">Avg. 47 Min First Deploy</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">$0 Paid to Builders</span><span class="text-orange/30 mx-3">·</span>
+        <span class="font-display font-semibold text-sm text-white/25 mx-10 uppercase tracking-wider">Ship in Under 90 Min</span><span class="text-orange/30 mx-3">·</span>
       </div>
     </div>
   </div>
@@ -576,11 +580,7 @@
             <p class="text-white/60 leading-relaxed text-base">We catch any break before your users do and notify you instantly.</p>
           </div>
 
-          <!-- End pill inside track -->
-          <div class="flex items-center flex-shrink-0 px-4" id="how-pill" style="opacity:0">
-            <span class="pill text-sage border-sage/40">Your idea, souped up! 🍲</span>
-          </div>
-          <div style="width:40px;flex-shrink:0"></div>
+          <div style="width:60px;flex-shrink:0"></div>
         </div>
       </div>
     </div>
@@ -612,7 +612,7 @@
     </div>
     <div class="text-center reveal delay-4">
       <p class="text-ink-muted mb-7">You control shipping, purchases, and alerts.</p>
-      <a href="#signup" class="bg-orange text-white font-semibold text-sm px-8 py-4 rounded-full hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start getting souped! →</a>
+      <a href="#signup" class="bg-orange text-white font-semibold text-sm px-8 py-4 rounded-full hover:bg-orange-dk transition-colors shadow-lg shadow-orange/20">Start getting souped!</a>
     </div>
   </div>
 </section>
@@ -664,14 +664,18 @@
       </div>
       <div class="marquee-wrap border-y border-cream-dark py-4 mt-10">
         <div class="marquee-track mq-rev">
-          <span class="font-display font-semibold text-sm text-ink/30 mx-10">1,200+ apps shipped</span><span class="text-orange/30 mx-3">·</span>
-          <span class="font-display font-semibold text-sm text-ink/30 mx-10">avg. 47 min first deploy</span><span class="text-orange/30 mx-3">·</span>
-          <span class="font-display font-semibold text-sm text-ink/30 mx-10">$0 paid to builders</span><span class="text-orange/30 mx-3">·</span>
-          <span class="font-display font-semibold text-sm text-ink/30 mx-10">ship in under 90 min</span><span class="text-orange/30 mx-3">·</span>
-          <span class="font-display font-semibold text-sm text-ink/30 mx-10">1,200+ apps shipped</span><span class="text-orange/30 mx-3">·</span>
-          <span class="font-display font-semibold text-sm text-ink/30 mx-10">avg. 47 min first deploy</span><span class="text-orange/30 mx-3">·</span>
-          <span class="font-display font-semibold text-sm text-ink/30 mx-10">$0 paid to builders</span><span class="text-orange/30 mx-3">·</span>
-          <span class="font-display font-semibold text-sm text-ink/30 mx-10">ship in under 90 min</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">1,200+ Apps Shipped</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">Avg. 47 Min First Deploy</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">$0 Paid to Builders</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">Ship in Under 90 Min</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">1,200+ Apps Shipped</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">Avg. 47 Min First Deploy</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">$0 Paid to Builders</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">Ship in Under 90 Min</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">1,200+ Apps Shipped</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">Avg. 47 Min First Deploy</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">$0 Paid to Builders</span><span class="text-orange/30 mx-3">·</span>
+          <span class="font-display font-semibold text-sm text-ink/30 mx-10 uppercase tracking-wider">Ship in Under 90 Min</span><span class="text-orange/30 mx-3">·</span>
         </div>
       </div>
     </div>
@@ -728,7 +732,7 @@
             <label for="signup-email" class="sr-only">Email address</label>
             <div class="flex flex-col sm:flex-row gap-3">
               <input id="signup-email" type="email" placeholder="your@email.com" required autocomplete="email" aria-describedby="signup-error" class="flex-1 px-5 py-4 rounded-xl bg-white/15 text-white placeholder-white/45 border border-white/20 focus:outline-none focus:border-white/50 text-sm backdrop-blur-sm">
-              <button type="submit" class="bg-white text-ink font-semibold px-8 py-4 rounded-xl hover:bg-cream transition-colors whitespace-nowrap text-sm shadow-lg shadow-black/15">Get early access →</button>
+              <button type="submit" class="bg-white text-ink font-semibold px-8 py-4 rounded-xl hover:bg-cream transition-colors whitespace-nowrap text-sm shadow-lg shadow-black/15">Get early access</button>
             </div>
             <p id="signup-error" role="alert" class="text-white/80 text-sm" style="min-height:1.25rem"></p>
           </form>
@@ -802,7 +806,7 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 
   let partIdx = 0, charIdx = 0;
   const speed = 55;
-  const startDelay = 600;
+  const startDelay = prefersReduced ? 200 : 1200;
 
   function type() {
     if (partIdx >= parts.length) {
@@ -854,7 +858,7 @@ if (prefersReduced) {
   document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => el.classList.add('is-visible'));
   document.querySelectorAll('.bento-card').forEach(el => { el.style.opacity='1'; el.style.transform='none'; });
   document.querySelectorAll('#asm-intro,#app-window,#step-describe,#step-processing,#step-live,#live-badge,.block-chip,.float-label,.status-pill').forEach(el => { el.style.opacity='1'; el.style.transform='none'; });
-  document.getElementById('how-pill').style.opacity='1';
+  // how-pill removed
   // Set bento numbers to final values
   document.querySelectorAll('.bento-num').forEach(el => {
     const prefix = el.dataset.prefix || '';
@@ -920,10 +924,6 @@ const howWidth = howTrack.scrollWidth - window.innerWidth + 100;
 gsap.to(howTrack, {
   x: -howWidth, ease:'none',
   scrollTrigger: { trigger:'#how', start:'top top', end:'bottom bottom', scrub:1 }
-});
-gsap.to('#how-pill', {
-  opacity:1, duration:.3,
-  scrollTrigger: { trigger:'#how', start:'70% top', end:'bottom bottom', scrub:true }
 });
 
 
